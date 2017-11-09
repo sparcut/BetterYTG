@@ -4,9 +4,21 @@
   "description": "BetterIPTV boosts Ice Poseidon's YouTube Live Stream with more emotes, going live notifications and more.",
   "main": "BetterIPTV.js",
   "scripts": {
-    "start": "",
+    "start": "webpack --progress",
+    "watch": "webpack --progress --watch",
     "test": ""
   },
   "author": "sparcut",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.2.0",
+    "css-loader": "^0.28.7",
+    "node-sass": "^4.6.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1"
+  }
 }

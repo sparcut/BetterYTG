@@ -5,21 +5,28 @@
   "version": "0.0.1",
   "description": "BetterIPTV boosts Ice Poseidon's YouTube Live Stream with more emotes, going live notifications and more.",
   "icons": {
-    "64": "assets/icon_64.png",
-    "128": "assets/icon_128.png"
+    "64": "assets/icons/purple_64.png",
+    "128": "assets/icons/purple_128.png"
   },
 
-  "permissions": [],
+  "permissions": [
+    "storage",
+    "notifications",
+    "background",
+    "http://107.170.95.160/*",
+    "https://*.ytimg.com/*"
+  ],
 
-  "options_page": "options/options.html",
-  "browser_actions": {
-    "default_icon": "assets/icon_128.png",
+
+  "options_page": "html/options.html",
+  "browser_action": {
+    "default_icon": "assets/icons/purple_128.png",
     "default_title": "BetterIPTV",
-    "default_popup": "popup/popup.html"
+    "default_popup": "html/popup.html"
   },
   "background": {
     "scripts": [
-      "background.js"
+      "js/background.js"
     ]
   },
   "content_scripts": [
@@ -29,8 +36,7 @@
         "*://*.youtube.com/*"
       ],
       "run_at": "document_end",
-      "js": [],
-      "css": []
+      "js": [ "js/content.js" ]
     }
   ]
 }
