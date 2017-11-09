@@ -1,0 +1,12 @@
+{
+  "name": "betteriptv",
+  "version": "0.0.1",
+  "description": "BetterIPTV boosts Ice Poseidon's YouTube Live Stream with more emotes, going live notifications and more.",
+  "main": "BetterIPTV.js",
+  "scripts": {
+    "start": "",
+    "test": ""
+  },
+  "author": "sparcut",
+  "license": "MIT"
+}
