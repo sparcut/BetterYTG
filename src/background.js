@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import LocalStorage from './chrome/LocalStorage';
+import LocalStorage from './utils/chrome/LocalStorage';
 
 const CONFIG = {
   liveCheck: {
