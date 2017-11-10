@@ -75,4 +75,5 @@ const startLiveCheck = () => {
   }, CONFIG.liveCheck.interval);
 }
 
+LocalStorage.listen(localStorageChanged);
 startLiveCheck();
