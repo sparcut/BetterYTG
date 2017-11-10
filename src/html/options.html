@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>BetterTTV Options</title>
+  </head>
+  <body>
+    <div class="section">
+      <h3 class="options-heading">General Options</h3>
+      <table>
+          <td><label for="enableLiveNotification">Enable live notification</label></td>
+          <td><input disabled type="checkbox" id="enableLiveNotification" class="option-input"></td>
+        </tr>
+        <tr>
+          <td><label for="enableNotificationSound">Enable notification sound</label></td>
+          <td><input disabled type="checkbox" id="enableNotificationSound" class="option-input"></td>
+        </tr>
+        <tr>
+          <td><label for="notificationVolume">Notification sound volume</label></td>
+          <td><input disabled type="range" min="0" max="100" id="notificationVolume" class="option-input"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="section">
+      <h3 class="options-heading">Emote Options</h3>
+      <table>
+        <tr>
+          <td><label for="enableTwitchEmotes">Enable Twitch emotes</label></td>
+          <td><input disabled type="checkbox" id="enableTwitchEmotes" class="option-input"></td>
+        </tr>
+        <tr>
+          <td><label for="enableTwitchSubEmotes">Enable Twitch subscriber emotes</label></td>
+          <td><input disabled type="checkbox" id="enableTwitchSubEmotes" class="option-input"></td>
+        </tr>
+        <tr>
+          <td><label for="enableBetterTTVEmotes">Enable BetterTTV emotes</label></td>
+          <td><input disabled type="checkbox" id="enableBetterTTVEmotes" class="option-input"></td>
+        </tr>
+        <tr>
+          <td><label for="enableIceOldEmotes">Enable Ice's old subscriber emotes</label></td>
+          <td><input disabled type="checkbox" id="enableIceOldEmotes" class="option-input"></td>
+        </tr>
+      </table>
+      <div class="multiline-option">
+        <label for="emoteChannels">Enabled emote channels <span>(comma seperated)</span></label>
+        <input disabled type="text" id="emoteChannels" class="option-input" style="width: 100%">
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="section">
+      <h3 class="options-heading">Chat Options</h3>
+      <table>
+        <tr>
+          <td><label for="removeChatAvatars">Remove chat avatars</label></td>
+          <td><input disabled type="checkbox" id="removeChatAvatars" class="option-input"></td>
+        </tr>
+        <tr>
+          <td><label for="enableChatColors">Enable chat name colors</label></td>
+          <td><input disabled type="checkbox" id="enableChatColors" class="option-input"></td>
+        </tr>
+        <tr>
+          <td><label for="separateChatLines">Add lines between messages</label></td>
+          <td><input disabled type="checkbox" id="separateChatLines" class="option-input"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="hr"></div>
+
+    <div id="save-status">&nbsp;</div>
+
+    <script src="../options.js"></script>
+  </body>
+</html>
