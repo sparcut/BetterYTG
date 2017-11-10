@@ -29,5 +29,5 @@ module.exports = {
     ])
   ],
 
-  devtool: "inline-cheap-source-map"
+  devtool: 'inline-cheap-source-map'
 }
