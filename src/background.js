@@ -76,4 +76,5 @@ const startLiveCheck = () => {
 }
 
 LocalStorage.listen(localStorageChanged);
+
 startLiveCheck();
