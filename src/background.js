@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import LocalStorage from './chrome/LocalStorage';
+import LocalStorage from './utils/chrome/LocalStorage';
 
 const CONFIG = {
   liveCheck: {
@@ -21,6 +21,8 @@ const triggerLiveNotification = (liveRequest) => {
     isClickable: true
   });
 }
+let RES;
+window.fakeNoti = () => triggerLiveNotification(RES);
 
 const toggleLiveIcon = (liveStatus) => {
   const IconPath = liveStatus === true ?
@@ -62,6 +64,7 @@ const liveCheck = () => {
   request.then(async (res) => {
     const data = res.data;
     const lastRequest = await LocalStorage.get('liveRequest');
+    RES = res.data;
     if(data !== lastRequest) {
       LocalStorage.set({ liveRequest: data }); // TODO: Need to ensure liveRequest is defined as error will be thrown if .status is called and not defined
     }

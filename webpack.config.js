@@ -5,14 +5,14 @@ const webpack = require('webpack'),
 module.exports = {
   context: path.resolve('src'),
   entry: {
-    content: './js/content/',
-    background: './js/background.js',
-    popup: './js/popup.js',
-    options: './js/options.js'
+    content: './content/',
+    background: './background.js',
+    popup: './popup.js',
+    options: './options.js'
   },
   output: {
     path: path.resolve('dist'),
-    filename: './js/[name].js'
+    filename: './[name].js'
   },
 
   module: {
