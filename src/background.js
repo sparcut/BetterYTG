@@ -43,13 +43,21 @@ const localStorageChanged = (changes) => {
     const change = changes[changeKey];
     switch(changeKey) {
       case 'liveRequest':
-        if(change.newValue.status !== change.oldValue.status) {
-          if(change.newValue === true) {
+        const testLiveRequest = () => {
+          if(change.newValue.status === true) {
             triggerLiveNotification(change.newValue);
             toggleLiveIcon(change.newValue.status);
           } else {
             toggleLiveIcon(change.newValue.status);
           }
+        }
+
+        if(change.hasOwnProperty('oldValue')) {
+          if(change.newValue.status !== change.oldValue.status) {
+            testLiveRequest();
+          }
+        } else {
+          testLiveRequest();
         }
       break;
     }
@@ -75,5 +83,7 @@ const startLiveCheck = () => {
   }, CONFIG.liveCheck.interval);
 }
 
+
+chrome.storage.local.remove('liveRequest');
 LocalStorage.listen(localStorageChanged);
 startLiveCheck();
