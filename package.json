@@ -11,7 +11,8 @@
   "author": "sparcut",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.17.0"
+    "axios": "^0.17.0",
+    "date-fns": "^1.29.0"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.2.0",

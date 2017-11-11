@@ -1,4 +1,5 @@
 import axios from 'axios';
+import dateFormat from  'date-fns/format';
 import { LocalStorage, Notifications } from '../utils/chrome';
 
 import CONFIG from '../config.js';
@@ -13,7 +14,7 @@ class LiveChecker {
   async init() {
     await LocalStorage.remove('liveRequest');
     
-    Notifications.listen('onClicked', 'liveNotification', this._onClickNotification);
+    Notifications.listen('onClicked', 'live', this._onClickNotification);
 
     LocalStorage.listen(this._liveRequestDidChange, 'liveRequest');
     this.liveCheck();
@@ -60,10 +61,10 @@ class LiveChecker {
   }
 
   _emitNotification(liveRequest) {
-    Notifications.create('liveNotification', {
+    Notifications.create('live', {
       type: 'basic',
       iconUrl: liveRequest.thumbnail_url,
-      title: 'Ice Poseidon is live!',
+      title: `Ice Poseidon is live! (${dateFormat(Date.now(), 'h:mm a')})`,
       message: liveRequest.title,
       contextMessage: 'BetterIPTV',
       priority: 2,
@@ -79,7 +80,7 @@ class LiveChecker {
   }
 
   _retractNotification() {
-    Notifications.clear('liveNotification');
+    Notifications.clear('live');
   }
 
   _toggleLiveIcon(liveStatus) {
