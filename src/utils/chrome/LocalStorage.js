@@ -3,35 +3,38 @@ class LocalStorage {
     this.store = chrome.storage.local;
   }
 
-  get(keys) {
+  get(keys = null) {
     return new Promise((res, rej) => {
-      this.store.get(keys, (items) => {
-        res(items);
-      });
+      // resolve args = items:object
+      this.store.get(keys, res);
+    });
+  }
+
+  getBytesInUse(keys = null) {
+    return new Promise((res, rej) => {
+      // resolve args = bytesInUse:integer
+      this.store.getBytesInUse(keys, res);
     });
   }
 
   set(items) {
     return new Promise((res, rej) => {
-      this.store.set(items, () => {
-        res();
-      });
+      // resolve args = (none)
+      this.store.set(items, res);
     });
   }
 
   remove(keys) {
+    // resolve args = (none)
     return new Promise((res, rej) => {
-      this.store.remove(keys, () => {
-        res();
-      });
+      this.store.remove(keys, res);
     });
   }
 
   clear() {
+    // resolve args = (none)
     return new Promise((res, rej) => {
-      this.store.clear(() => {
-        res();
-      });
+      this.store.clear(res);
     });
   }
 

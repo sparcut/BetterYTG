@@ -62,7 +62,7 @@ class Notifications {
      * onButtonClicked = notificationId:string, buttonIndex:integer
      * 
      * onPermissionLevelChanged = level:PermissionLevel (https://developer.chrome.com/apps/notifications#type-PermissionLevel)
-     * onShowSettings = (no args)
+     * onShowSettings = (none)
      */
 
     // This callback relates only to those events that have notificationId arg
