@@ -6,7 +6,7 @@ module.exports = {
   context: path.resolve('src'),
   entry: {
     content: './content/',
-    background: './background.js',
+    background: './background/',
     popup: './popup.js',
     options: './options.js'
   },
