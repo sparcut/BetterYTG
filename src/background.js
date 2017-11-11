@@ -29,38 +29,50 @@ const toggleLiveIcon = (liveStatus) => {
   chrome.browserAction.setIcon({ path: IconPath });
 }
 
+const removeLiveNotification = () => {
+  chrome.notifications.clear('liveNotification');
+}
+
 chrome.notifications.onClicked.addListener((notificationId) => {
   if(notificationId === 'liveNotification') {
     chrome.tabs.create({ url: 'https://gaming.youtube.com/ice_poseidon/live' });
-    chrome.notifications.clear(notificationId);
+    removeLiveNotification();
   }
 });
 
 const syncStorageChanged = (changes) => {}
 
-const localStorageChanged = (changes) => {
-  for(const changeKey in changes) {
-    const change = changes[changeKey];
-    switch(changeKey) {
-      case 'liveRequest':
-        const testLiveRequest = () => {
-          if(change.newValue.status === true) {
-            triggerLiveNotification(change.newValue);
-            toggleLiveIcon(change.newValue.status);
-          } else {
-            toggleLiveIcon(change.newValue.status);
-          }
-        }
-
-        if(change.hasOwnProperty('oldValue')) {
-          if(change.newValue.status !== change.oldValue.status) {
-            testLiveRequest();
-          }
-        } else {
-          testLiveRequest();
-        }
-      break;
+const liveStatusChanged = (oldValue, newValue) => {
+  const hasOldStatus = oldValue && oldValue.hasOwnProperty('status');
+  const hasChanged = () => {
+    if(newValue.status) {
+      triggerLiveNotification(newValue);
+    } else {
+      // To remove if notification is present and stream status is false
+      removeLiveNotification();
     }
+
+    toggleLiveIcon(newValue.status);
+  }
+  
+  if(hasOldStatus) {
+    if(oldValue.status !== newValue.status) {
+      hasChanged(newValue.status);
+    }
+  } else {
+    hasChanged(newValue.status);
+  }
+}
+
+const localStorageChanged = (changes) => {
+  const changeResolver = {
+    'liveRequest': liveStatusChanged
+  }
+  for(const changeKey in changes) {
+    const oldValue = changes[changeKey].oldValue || null;
+    const newValue = changes[changeKey].newValue;
+
+    changeResolver[changeKey](oldValue, newValue);
   }
 }
 
@@ -83,7 +95,15 @@ const startLiveCheck = () => {
   }, CONFIG.liveCheck.interval);
 }
 
+const startup = () => {
+  // When adding another promise, return Promise.all(iterable). atm only 1 startup promise
+  return LocalStorage.remove('liveRequest');
+}
 
-chrome.storage.local.remove('liveRequest');
-LocalStorage.listen(localStorageChanged);
-startLiveCheck();
+const main = async () => {
+  await startup();
+
+  // Init stuff under here
+  LocalStorage.listen(localStorageChanged);
+  startLiveCheck();
+}
