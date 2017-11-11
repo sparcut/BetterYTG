@@ -1,7 +1,10 @@
 import dateFormat from 'date-fns/format';
-import { Notifications } from './utils/chrome';
+import { Notifications, SyncStorage } from './utils/chrome';
 
 import './sass/options.sass'
+
+let Options = {};
+SyncStorage.listen((oldValue, newValue) => Options = newValue, 'options');
 
 // Function Definitions
 const saveOptions = (options) => {
@@ -41,6 +44,10 @@ const testNotification = () => {
     priority: 2,
     eventTime: Date.now(),
     isClickable: true
+  }).then(() => {
+    const notificationSound = new Audio('../assets/old_online_sound.mp3');
+    notificationSound.volume = (Options.notificationVolume || 0.5);
+    notificationSound.play();
   });
 }
 
@@ -63,7 +70,6 @@ chrome.storage.sync.get('options', (items = {}) => {
 
     input.removeAttribute('disabled');
 
-    const inputType = isCheckbox ? 'change' : 'input';
     const onInputChange = () => {
       if(isCheckbox) {
         return () => {
@@ -83,7 +89,7 @@ chrome.storage.sync.get('options', (items = {}) => {
         }
       }
     }
-    input.addEventListener(inputType, onInputChange());
+    input.addEventListener('change', onInputChange());
   });
 });
 

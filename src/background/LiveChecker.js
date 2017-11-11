@@ -71,7 +71,7 @@ class LiveChecker {
       eventTime: Date.now(),
       isClickable: true,
       requireInteraction: true
-    });
+    }).then(this._playLiveSound);
   }
 
   _onClickNotification() {
@@ -87,6 +87,12 @@ class LiveChecker {
     const IconPath = liveStatus === true ?
       './assets/icons/green_128.png' : './assets/icons/purple_128.png'; // TODO: Fix icons here and in manifest https://developer.chrome.com/extensions/manifest/icons
     chrome.browserAction.setIcon({ path: IconPath });
+  }
+
+  _playLiveSound() {
+    const notificationSound = new Audio('./assets/old_online_sound.mp3');
+    notificationSound.volume = 0.5;
+    notificationSound.play();
   }
 }
 
