@@ -42,7 +42,7 @@ class Notifications {
   }
 
   listen(event, notificationId = null, callback) {
-    // event = 'onClosed' | 'onClicked' | 'onButtonClicked'
+    // event = 'onClosed' | 'onClicked' | 'onButtonClicked' | 'onPermissionLevelChanged' | 'onShowSettings'
     // notificationId is optional
     if(typeof notificationId === 'function') {
       callback = notificationId;
