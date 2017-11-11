@@ -35,10 +35,16 @@ class LocalStorage {
     });
   }
 
-  listen(onChange) {
+  listen(onChange, item = null) {
     chrome.storage.onChanged.addListener((changes, areaName) => {
       if(areaName === 'local') {
-        onChange(changes);
+        if(item !== null) {
+          if(changes.hasOwnProperty(item)) {
+            onChange(changes);
+          }
+        } else {
+          onChange(changes);
+        }
       }
     });
   }
