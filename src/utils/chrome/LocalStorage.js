@@ -12,7 +12,27 @@ class LocalStorage {
   }
 
   set(items) {
-    this.store.set(items);
+    return new Promise((res, rej) => {
+      this.store.set(items, () => {
+        res();
+      });
+    });
+  }
+
+  remove(keys) {
+    return new Promise((res, rej) => {
+      this.store.remove(keys, () => {
+        res();
+      });
+    });
+  }
+
+  clear() {
+    return new Promise((res, rej) => {
+      this.store.clear(() => {
+        res();
+      });
+    });
   }
 
   listen(onChange) {
