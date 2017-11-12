@@ -1,3 +1,8 @@
+import InitiateOptions from './InitiateOptions';
 import LiveChecker from './LiveChecker';
 
-LiveChecker.init();
+const main = () => {
+  LiveChecker.init();
+}
+
+InitiateOptions().then(main);
