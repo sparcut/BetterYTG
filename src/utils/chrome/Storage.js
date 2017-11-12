@@ -42,7 +42,12 @@ class Storage {
     });
   }
 
-  listen(onChange, item = null) {
+  listen(item, onChange) {
+    if(typeof item === 'function') {
+      onChange = item;
+      item = null;
+    }
+
     chrome.storage.onChanged.addListener((changes, areaName) => {
       if(areaName === this.store) {
         if(item !== null) {

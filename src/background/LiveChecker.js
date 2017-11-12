@@ -16,7 +16,7 @@ class LiveChecker {
     
     Notifications.listen('onClicked', 'live', this._onClickNotification);
 
-    LocalStorage.listen(this._liveRequestDidChange, 'liveRequest');
+    LocalStorage.listen('liveRequest', this._liveRequestDidChange);
     this.liveCheck();
     return setInterval(() => this.liveCheck(), CONFIG.liveCheck.interval);
   }

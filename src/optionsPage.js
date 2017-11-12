@@ -4,7 +4,7 @@ import { Notifications, SyncStorage } from './utils/chrome';
 import './sass/options.sass'
 
 let Options = {};
-SyncStorage.listen((oldValue, newValue) => Options = newValue, 'options');
+SyncStorage.listen('options', (oldValue, newValue) => Options = newValue);
 
 // Function Definitions
 const saveOptions = (options) => {
