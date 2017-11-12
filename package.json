@@ -12,7 +12,8 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.17.0",
-    "date-fns": "^1.29.0"
+    "date-fns": "^1.29.0",
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.2.0",

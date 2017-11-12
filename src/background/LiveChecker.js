@@ -2,7 +2,9 @@ import axios from 'axios';
 import dateFormat from  'date-fns/format';
 import { LocalStorage, Notifications } from '../utils/chrome';
 
-import CONFIG from '../config.js';
+import Options from '../helpers/Options';
+
+import CONFIG from '../config';
 
 class LiveChecker {
   constructor() {
