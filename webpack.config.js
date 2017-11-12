@@ -8,7 +8,7 @@ module.exports = {
     content: './content/',
     background: './background/',
     popup: './popup.js',
-    options: './options.js'
+    optionsPage: './optionsPage.js'
   },
   output: {
     path: path.resolve('dist'),
