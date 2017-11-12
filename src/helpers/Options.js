@@ -20,8 +20,6 @@ class Options extends EventEmitter {
         this.emit('ready');
       });
 
-
-
     SyncStorage.listen('options', (oldValue, newValue) => {
       this._currentOptions = newValue;
       this.emit('changed', oldValue, newValue);
@@ -32,6 +30,7 @@ class Options extends EventEmitter {
    * Set option/s
    *
    * @arg {Object} items (Object of options/s with respective new value)
+   * @returns {Promise} onSet
    * @memberof Options
    */
   set(items) {
