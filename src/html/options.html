@@ -18,7 +18,12 @@
         </tr>
         <tr>
           <td><label for="notificationVolume">Notification sound volume</label></td>
-          <td><input disabled type="range" min="0" max="1" step="0.01" id="notificationVolume" class="option-input"></td>
+          <td>
+            <div class="range-wrapper">
+              <input disabled type="range" min="0" max="1" step="0.01" id="notificationVolume" class="option-input range-input">
+              <span class="range-output" data-multiplier="100"></span>
+            </div>
+          </td>
         </tr>
         <tr>
           <td>Test notification</td>

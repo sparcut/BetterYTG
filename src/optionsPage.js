@@ -57,7 +57,7 @@ const inputListenerValues = (input) => {
   if(Options.has(input.id)) {
     input[inputValueKey] = Options.get(input.id);
   }
-  
+
   const eventType = isTextbox ? 'input' : 'change';
 
   const onChange = (() => {
@@ -82,15 +82,33 @@ const inputListenerValues = (input) => {
     } else {
       return saveOption;
     }
-    
   })();
   
   return { eventType, onChange }
 }
 
+const initRangeWithDisplay = (rangeContainer) => {
+  const input = rangeContainer.querySelector('.range-input');
+  const output = rangeContainer.querySelector('.range-output');
+
+  const inputMin = input.getAttribute('min');
+  const inputMax = input.getAttribute('max');
+  const inputRange = inputMax - inputMin;
+  const outputMultiplier = output.dataset.multiplier || 1;
+
+  input.addEventListener('input', () => {
+    const inputVal = input.value;
+    const position = ((inputVal - inputMin) / inputRange) * 100;
+    
+    output.setAttribute('style', `left: ${position}%`);
+    output.innerHTML = Math.floor(inputVal * outputMultiplier); 
+  });
+}
+
 // Executed code
 const OptionInputs = document.querySelectorAll('.option-input');
 const TestNotificationButton = document.getElementById('test-notification');
+const RangeWrappers = document.querySelectorAll('.range-wrapper'); 
 
 Options.on('ready', () => {
   OptionInputs.forEach((input) => {
@@ -102,3 +120,5 @@ Options.on('ready', () => {
 });
 
 TestNotificationButton.addEventListener('click', testNotification);
+
+RangeWrappers.forEach(initRangeWithDisplay);
