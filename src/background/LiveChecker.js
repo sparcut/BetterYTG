@@ -63,17 +63,19 @@ class LiveChecker {
   }
 
   _emitNotification(liveRequest) {
-    Notifications.create('live', {
-      type: 'basic',
-      iconUrl: liveRequest.thumbnail_url,
-      title: `Ice Poseidon is live! (${dateFormat(Date.now(), 'h:mm a')})`,
-      message: liveRequest.title,
-      contextMessage: 'BetterIPTV',
-      priority: 2,
-      eventTime: Date.now(),
-      isClickable: true,
-      requireInteraction: true
-    }).then(this._playLiveSound);
+    if(Options.get('enableLiveNotification')) {
+      Notifications.create('live', {
+        type: 'basic',
+        iconUrl: liveRequest.thumbnail_url,
+        title: `Ice Poseidon is live! (${dateFormat(Date.now(), 'h:mm a')})`,
+        message: liveRequest.title,
+        contextMessage: 'BetterIPTV',
+        priority: 2,
+        eventTime: Date.now(),
+        isClickable: true,
+        requireInteraction: true
+      }).then(this._playLiveSound);
+    }
   }
 
   _onClickNotification() {
@@ -92,9 +94,11 @@ class LiveChecker {
   }
 
   _playLiveSound() {
-    const notificationSound = new Audio('./assets/old_online_sound.mp3');
-    notificationSound.volume = 0.5;
-    notificationSound.play();
+    if(Options.get('enableNotificationSound')) {
+      const notificationSound = new Audio('./assets/old_online_sound.mp3');
+      notificationSound.volume = Options.get('notificationVolume');
+      notificationSound.play();
+    }
   }
 }
 
