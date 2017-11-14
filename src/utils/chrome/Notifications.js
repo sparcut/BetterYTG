@@ -87,4 +87,4 @@ class Notifications {
   }
 }
 
-export default new Notifications;
+export default Notifications;
