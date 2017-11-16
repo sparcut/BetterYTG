@@ -69,7 +69,7 @@ class LiveChecker {
         iconUrl: liveRequest.thumbnail_url,
         title: `Ice Poseidon is live! (${dateFormat(Date.now(), 'h:mm a')})`,
         message: liveRequest.title,
-        contextMessage: 'BetterIPTV',
+        contextMessage: 'BetterYTG',
         priority: 2,
         eventTime: Date.now(),
         isClickable: true,

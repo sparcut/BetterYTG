@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "BetterIPTV",
+  "name": "BetterYTG",
   "version": "0.0.1",
-  "description": "BetterIPTV boosts Ice Poseidon's YouTube Live Stream with more emotes, going live notifications and more.",
+  "description": "BetterYTG enhances YouTube Gaming Livestream's with more emotes (Twitch, BTTV Emotes), new features, and more.",
   "icons": {
     "64": "assets/icons/purple_64.png",
     "128": "assets/icons/purple_128.png"
@@ -24,7 +24,7 @@
   },
   "browser_action": {
     "default_icon": "assets/icons/purple_128.png",
-    "default_title": "BetterIPTV",
+    "default_title": "BetterYTG",
     "default_popup": "html/popup.html"
   },
   "background": {

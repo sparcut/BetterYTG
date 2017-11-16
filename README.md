@@ -1,2 +1,2 @@
-# BetterIPTV
-BetterIPTV boosts Ice Poseidon's YouTube Live Stream with more emotes, going live notifications and more.
+# BetterYTG
+BetterYTG enhances YouTube Gaming Livestream's with more emotes (Twitch, BTTV Emotes), new features, and more.

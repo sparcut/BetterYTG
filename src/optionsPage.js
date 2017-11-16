@@ -35,7 +35,7 @@ const testNotification = () => {
       iconUrl: '../assets/icons/purple_128.png',
       title: `Test notification! (${dateFormat(Date.now(), 'h:mm a')})`,
       message: 'This notification was generated as a test.',
-      contextMessage: 'BetterIPTV',
+      contextMessage: 'BetterYTG',
       priority: 2,
       eventTime: Date.now(),
       isClickable: true

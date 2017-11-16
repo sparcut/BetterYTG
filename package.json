@@ -1,11 +1,10 @@
 {
-  "name": "betteriptv",
+  "name": "betterytg",
   "version": "0.0.1",
-  "description": "BetterIPTV boosts Ice Poseidon's YouTube Live Stream with more emotes, going live notifications and more.",
-  "main": "BetterIPTV.js",
+  "description": "BetterYTG enhances YouTube Gaming Livestream's with more emotes (Twitch, BTTV Emotes), new features, and more.",
   "scripts": {
-    "start": "webpack --progress",
-    "watch": "webpack --progress --watch",
+    "start": "webpack --progress --watch",
+    "build": "webpack --progress",
     "test": ""
   },
   "author": "sparcut",
