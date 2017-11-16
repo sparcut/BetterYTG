@@ -4,6 +4,7 @@
   "description": "BetterYTG enhances YouTube Gaming Livestream's with more emotes (Twitch, BTTV Emotes), new features, and more.",
   "scripts": {
     "start": "webpack --progress --watch",
+    "watch": "npm start",
     "build": "webpack --progress",
     "test": ""
   },
@@ -20,7 +21,6 @@
     "node-sass": "^4.6.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
-    "webpack": "^3.8.1",
-    "webpack-chrome-extension-reloader": "^0.6.0"
+    "webpack": "^3.8.1"
   }
 }
