@@ -3,7 +3,7 @@ import { debounce } from 'lodash';
 import { Notifications } from './utils/chrome';
 
 import Options from './helpers/Options';
-import './sass/options.sass';
+import './sass/optionsPage.sass';
 
 // Function Definitions
 
