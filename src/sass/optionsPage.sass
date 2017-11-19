@@ -4,6 +4,18 @@ body
   font-family: 'Open Sans', Arial, sans-serif
   padding: 10px
 
+.section
+  &:nth-child(1)
+    .options-heading
+      margin: 0
+
+.options-heading
+  margin: 10px 0 0 0
+
+.options-description
+  margin: 0 0 10px 0
+  opacity: 0.8
+
 table
   border: none
   border-spacing: 0
@@ -14,9 +26,6 @@ table
       width: 60%
     &:nth-child(2)
       width: 40%
-
-.options-heading
-  margin: 10px 0
 
 .hr
   height: 1px

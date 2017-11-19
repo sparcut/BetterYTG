@@ -5,8 +5,9 @@
   "version": "0.0.1",
   "description": "BetterYTG enhances YouTube Gaming Livestream's with more emotes (Twitch, BTTV Emotes), new features, and more.",
   "icons": {
-    "64": "assets/icons/purple_64.png",
-    "128": "assets/icons/purple_128.png"
+    "16": "assets/images/BetterYTG_red_16.png",
+    "48": "assets/images/BetterYTG_red_48.png",
+    "128": "assets/images/BetterYTG_red_128.png"
   },
 
   "permissions": [
@@ -23,7 +24,6 @@
     "chrome_style": true
   },
   "browser_action": {
-    "default_icon": "assets/icons/purple_128.png",
     "default_title": "BetterYTG",
     "default_popup": "html/popup.html"
   },

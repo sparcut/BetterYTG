@@ -8,7 +8,8 @@ module.exports = {
     content: './content/',
     background: './background/',
     popup: './popup.js',
-    optionsPage: './optionsPage.js'
+    optionsPage: './optionsPage.js',
+    setupPage: './setupPage.js'
   },
   output: {
     path: path.resolve('dist'),
@@ -26,7 +27,11 @@ module.exports = {
       'manifest.json',
       'assets/**/*',
       'html/**/*'
-    ]),
+    ], {
+      ignore: [
+        '**/*.psd'
+      ]
+    }),
   ],
 
   devtool: '#inline-cheap-source-map'

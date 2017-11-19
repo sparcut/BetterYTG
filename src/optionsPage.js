@@ -2,7 +2,7 @@ import dateFormat from 'date-fns/format';
 import { debounce } from 'lodash';
 import { Notifications } from './utils/chrome';
 
-import Options from './helpers/Options';
+import PersistentSyncStorage from './helpers/PersistentSyncStorage';
 import './sass/optionsPage.sass';
 
 // Function Definitions
@@ -13,7 +13,6 @@ const hideDebounce = debounce((ele) => {
 
 const setSavingStatus = (status) => {
   const SaveStatusEle = document.getElementById('save-status');
-  SaveStatusEle.classList.add('show');
 
   switch(status) {
     case 'saving':
@@ -26,13 +25,15 @@ const setSavingStatus = (status) => {
     default:
       SaveStatusEle.innerHTML = '&nbsp;';
   }
+
+  SaveStatusEle.classList.add('show');
 }
 
 const testNotification = () => {
-  if(Options.get('enableLiveNotification')) {
+  if(PersistentSyncStorage.data.options['iceEnableLiveNotification']) {
     Notifications.create('test', {
       type: 'basic',
-      iconUrl: '../assets/icons/purple_128.png',
+      iconUrl: '../assets/images/BetterYTG_purple_128.png',
       title: `Test notification! (${dateFormat(Date.now(), 'h:mm a')})`,
       message: 'This notification was generated as a test.',
       contextMessage: 'BetterYTG',
@@ -40,9 +41,9 @@ const testNotification = () => {
       eventTime: Date.now(),
       isClickable: true
     }).then(() => {
-      if(Options.get('enableNotificationSound')) {
+      if(PersistentSyncStorage.data.options['iceEnableNotificationSound']) {
         const notificationSound = new Audio('../assets/old_online_sound.mp3');
-        notificationSound.volume = (Options.get('notificationVolume') || 0.5);
+        notificationSound.volume = (PersistentSyncStorage.data.options['iceNotificationVolume'] || 0.5);
         notificationSound.play();
       }
     });
@@ -54,8 +55,8 @@ const inputListenerValues = (input) => {
   const isTextbox = input.type === 'text';
   const inputValueKey = isCheckbox ? 'checked' : 'value';
   
-  if(Options.has(input.id)) {
-    input[inputValueKey] = Options.get(input.id);
+  if(PersistentSyncStorage.data.options.hasOwnProperty(input.id)) {
+    input[inputValueKey] = PersistentSyncStorage.data.options[input.id];
   }
 
   const eventType = isTextbox ? 'input' : 'change';
@@ -63,7 +64,10 @@ const inputListenerValues = (input) => {
   const onChange = (() => {
     const saveOption = () =>  {
       setSavingStatus('saving');
-      Options.set({ [input.id]: input[inputValueKey] })
+      const updatedOptions = Object.assign({}, PersistentSyncStorage.data.options, {
+        [input.id]: input[inputValueKey]
+      });
+      PersistentSyncStorage.set({ options: updatedOptions })
         .then(() => {
           setSavingStatus('saved');
         });
@@ -110,7 +114,7 @@ const OptionInputs = document.querySelectorAll('.option-input');
 const TestNotificationButton = document.getElementById('test-notification');
 const RangeWrappers = document.querySelectorAll('.range-wrapper'); 
 
-Options.on('ready', () => {
+PersistentSyncStorage.on('ready', () => {
   OptionInputs.forEach((input) => {
     const inputListener = inputListenerValues(input);
     input.addEventListener(inputListener.eventType, inputListener.onChange);

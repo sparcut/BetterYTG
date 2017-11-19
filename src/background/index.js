@@ -1,8 +1,40 @@
-import InitiateOptions from './InitiateOptions';
-import LiveChecker from './LiveChecker';
+import PersistentSyncStorage from '../helpers/PersistentSyncStorage';
+
+import Setup from './Setup';
+import IceLiveChecker from './IceLiveChecker';
+
+import CONFIG from '../config.js';
+
+// TODO: Make this a class, much easier to maintain.
+
+// --- Global Variables ---
+
+
+
+// --- Functions ---
+
+
+
+// --- Main ---
 
 const main = () => {
-  LiveChecker.init();
+  let iceLiveChecker = null;
+
+  chrome.browserAction.setIcon({ path: '../assets/images/BetterYTG_red_48.png' });
+  
+  if(PersistentSyncStorage.data.options['iceEnableLiveIcon'] || PersistentSyncStorage.data.options['iceEnableLiveNotification']) {
+    iceLiveChecker = new IceLiveChecker;
+    iceLiveChecker.init();
+  }
 }
 
-InitiateOptions().then(main);
+// --- Executed ---
+
+PersistentSyncStorage.on('ready', () => {
+  // Ensure options store is setup
+  if(!PersistentSyncStorage.has('options')) {
+    PersistentSyncStorage.set({ options: CONFIG.defaultOptions });
+  }
+
+  Setup.ensure().then(main);
+});
