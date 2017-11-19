@@ -6,7 +6,7 @@ class Icon {
 
     this.paths = {}
 
-    _createPaths();
+    this._createPaths();
   }
 
   _filename(color, size) {
