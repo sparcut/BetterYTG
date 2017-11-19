@@ -19,8 +19,6 @@ import CONFIG from '../config.js';
 
 const main = () => {
   let iceLiveChecker = null;
-
-  chrome.browserAction.setIcon({ path: '../assets/images/BetterYTG_red_48.png' });
   
   if(PersistentSyncStorage.data.options['iceEnableLiveIcon'] || PersistentSyncStorage.data.options['iceEnableLiveNotification']) {
     iceLiveChecker = new IceLiveChecker;

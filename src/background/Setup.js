@@ -1,11 +1,8 @@
 import PersistentSyncStorage from '../helpers/PersistentSyncStorage';
+import Icon from '../helpers/Icon';
+
 import CONFIG from '../config';
 
-const inactiveIcons = {
-  '16': './assets/images/BetterYTG_grey_16.png',
-  '48': './assets/images/BetterYTG_grey_48.png',
-  '128': './assets/images/BetterYTG_grey_128.png'
-}
 
 const ensure = () => {
   return new Promise((res, rej) => {
@@ -18,6 +15,7 @@ const ensure = () => {
     // Otherwise inits setup
     const onSetupComplete = (message, sender) => {
       if(message.name === 'setupComplete') {
+        chrome.runtime.onMessage.removeListener(onSetupComplete);
         
         if(message.data.isPurpleArmy) {
           const icedOptions = Object.assign({}, PersistentSyncStorage.data.options, CONFIG.iceOptions);
@@ -28,12 +26,12 @@ const ensure = () => {
           setupComplete: true
         });
 
-        chrome.runtime.onMessage.removeListener(onSetupComplete);
+        Icon.set('red');
         res();
       }
     }
 
-    chrome.browserAction.setIcon({ path: inactiveIcons });
+    Icon.set('grey');
     chrome.tabs.create({ url: './html/setup.html' });
     chrome.runtime.onMessage.addListener(onSetupComplete);
   });

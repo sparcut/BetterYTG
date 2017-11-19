@@ -3,33 +3,18 @@ import dateFormat from  'date-fns/format';
 import { Notifications } from '../utils/chrome';
 
 import PersistentSyncStorage from '../helpers/PersistentSyncStorage';
+import Icon from '../helpers/Icon';
 
 import CONFIG from '../config';
 
 class IceLiveChecker { // TODO: Make this disablable, so it can be enabled/disabled on option change
   constructor() {
-    this._liveRequestDidChange = this._liveRequestDidChange.bind(this);
-    this._liveStatusDidChange = this._liveStatusDidChange.bind(this);
     this._onClickNotification = this._onClickNotification.bind(this);
 
     this._liveRequest = null;
-
-    // TODO: icons need to be normalized into module to control what currrent icons etc. (current icon grey or red)
-    // TODO: Icon paths can be made easy since has naming convetion
-    this._liveIcons = {
-      '16': './assets/images/BetterYTG_purple_16.png',
-      '48': './assets/images/BetterYTG_purple_48.png',
-      '128': './assets/images/BetterYTG_purple_128.png'
-    }
-    this._normalIcons = {
-      '16': './assets/images/BetterYTG_red_16.png',
-      '48': './assets/images/BetterYTG_red_48.png',
-      '128': './assets/images/BetterYTG_red_128.png'
-    }
   }
   
   async init() {
-    
     Notifications.listen('onClicked', 'live', this._onClickNotification);
     
     this.liveCheck();
@@ -100,21 +85,21 @@ class IceLiveChecker { // TODO: Make this disablable, so it can be enabled/disab
   }
 
   _toggleLiveIcon(liveStatus) {
-    const badgeBackgroundColor = '#AC19E8';
-    let iconPath;
+    const badgeBackgroundColor = '#ac19e8';
+    let iconColor;
     let badgeText;
 
     if(liveStatus === true) {
-      iconPath = this._liveIcons;
+      iconColor = 'purple';
       badgeText = 'LIVE';
     } else {
-      iconPath = this._normalIcons;
+      iconColor = 'red';
       badgeText = '';
     } 
     
-    chrome.browserAction.setIcon({ path: iconPath });
-    chrome.browserAction.setBadgeBackgroundColor({ color: badgeBackgroundColor });
-    chrome.browserAction.setBadgeText({ text: badgeText });
+    Icon.set(iconColor);
+    Icon.setBadgeBackgroundColor(badgeBackgroundColor);
+    Icon.setBadgeText(badgeText);
   }
 
   _playLiveSound() {
