@@ -5,34 +5,31 @@ import IceLiveChecker from './IceLiveChecker';
 
 import CONFIG from '../config.js';
 
-// TODO: Make this a class, much easier to maintain.
+class Main {
+  constructor() {
+    this.init = this.init.bind(this);
+    this.iceLiveChecker = null;
 
-// --- Global Variables ---
-
-
-
-// --- Functions ---
-
-
-
-// --- Main ---
-
-const main = () => {
-  let iceLiveChecker = null;
+    PersistentSyncStorage.on('ready', () => {
+      this.setupOptions();  
+      Setup.ensure().then(this.init);
+    });
+  }
   
-  if(PersistentSyncStorage.data.options['iceEnableLiveIcon'] || PersistentSyncStorage.data.options['iceEnableLiveNotification']) {
-    iceLiveChecker = new IceLiveChecker;
-    iceLiveChecker.init();
+  init() {
+    this.iceLiveChecker = new IceLiveChecker;
+
+    if(PersistentSyncStorage.data.options['iceEnableLiveIcon'] || PersistentSyncStorage.data.options['iceEnableLiveNotification']) {
+      this.iceLiveChecker.enable();
+    }
+  }
+  
+  setupOptions() {
+    // Ensure options store is setup
+    if(!PersistentSyncStorage.has('options')) {
+      PersistentSyncStorage.set({ options: CONFIG.defaultOptions });
+    }
   }
 }
 
-// --- Executed ---
-
-PersistentSyncStorage.on('ready', () => {
-  // Ensure options store is setup
-  if(!PersistentSyncStorage.has('options')) {
-    PersistentSyncStorage.set({ options: CONFIG.defaultOptions });
-  }
-
-  Setup.ensure().then(main);
-});
+const main = new Main;
