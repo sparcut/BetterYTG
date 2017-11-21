@@ -33,7 +33,7 @@ const testNotification = () => {
   if(PersistentSyncStorage.data.options['iceEnableLiveNotification']) {
     Notifications.create('test', {
       type: 'basic',
-      iconUrl: '../assets/images/BetterYTG_purple_128.png',
+      iconUrl: '../assets/icons/BetterYTG_purple_128.png',
       title: `Test notification! (${dateFormat(Date.now(), 'h:mm a')})`,
       message: 'This notification was generated as a test.',
       contextMessage: 'BetterYTG',

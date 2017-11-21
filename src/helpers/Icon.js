@@ -2,7 +2,7 @@ class Icon {
   constructor() {
     this._colors = [ 'red', 'grey', 'purple' ];
     this._sizes = [ '16', '48', '128' ];
-    this._path = './assets/images/';
+    this._path = './assets/icons/';
 
     this.paths = {}
 
