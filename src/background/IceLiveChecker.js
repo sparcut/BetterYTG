@@ -31,7 +31,7 @@ class IceLiveChecker { // TODO: Make this disablable, so it can be enabled/disab
   liveCheck() {
     const request = axios.get(CONFIG.iceLiveCheck.url);
 
-    request.then((res) => {
+    request.then(res => {
       const newRequest = res.data;
       if(newRequest !== this.liveRequest) {
         this._liveRequestDidChange(newRequest);
