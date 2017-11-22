@@ -1,15 +1,11 @@
 import dateFormat from 'date-fns/format';
 import { debounce } from 'lodash';
-import { Notifications } from './utils/chrome';
+import { Notifications } from 'src/utils/chrome';
 
-import PersistentSyncStorage from './helpers/PersistentSyncStorage';
-import './sass/optionsPage.sass';
+import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
+import 'src/sass/optionsPage.sass';
 
 // Function Definitions
-
-const hideDebounce = debounce((ele) => {
-  ele.classList.remove('show');
-}, 1000);
 
 const setSavingStatus = (status) => {
   const SaveStatusEle = document.getElementById('save-status');
@@ -50,16 +46,15 @@ const testNotification = () => {
   }
 }
 
-const inputListenerValues = (input) => {
+const optionOnChange = (input) => {
   const isCheckbox = input.type === 'checkbox';
-  const isTextbox = input.type === 'text';
   const inputValueKey = isCheckbox ? 'checked' : 'value';
   
   if(PersistentSyncStorage.data.options.hasOwnProperty(input.id)) {
     input[inputValueKey] = PersistentSyncStorage.data.options[input.id];
   }
 
-  const eventType = isTextbox ? 'input' : 'change';
+  const eventType = 'change';
 
   const onChange = (() => {
     const saveOption = () =>  {
@@ -73,56 +68,24 @@ const inputListenerValues = (input) => {
         });
     }
 
-    /**
-     * textboxes need to have `input` event listener so it triggers on each key input. 
-     * `change` event only fires when the textbox blurs, so has potential for not saving 
-     * if user closes options without clicking out of textbox.
-     * 
-     * Saving on each keystroke can cause chrome storage.set limit to prevent further setting.
-     * Thus, we need to debounce the text input.
-     */
-    if(isTextbox) {
-      return debounce(saveOption, 500);  
-    } else {
-      return saveOption;
-    }
+    return saveOption;
   })();
   
-  return { eventType, onChange }
+  return onChange
 }
 
-const initRangeWithDisplay = (rangeContainer) => {
-  const input = rangeContainer.querySelector('.range-input');
-  const output = rangeContainer.querySelector('.range-output');
-
-  const inputMin = input.getAttribute('min');
-  const inputMax = input.getAttribute('max');
-  const inputRange = inputMax - inputMin;
-  const outputMultiplier = output.dataset.multiplier || 1;
-
-  input.addEventListener('input', () => {
-    const inputVal = input.value;
-    const position = ((inputVal - inputMin) / inputRange) * 100;
-    
-    output.setAttribute('style', `left: ${position}%`);
-    output.innerHTML = Math.floor(inputVal * outputMultiplier); 
-  });
-}
 
 // Executed code
 const OptionInputs = document.querySelectorAll('.option-input');
 const TestNotificationButton = document.getElementById('test-notification');
-const RangeWrappers = document.querySelectorAll('.range-wrapper'); 
 
 PersistentSyncStorage.on('ready', () => {
   OptionInputs.forEach((input) => {
-    const inputListener = inputListenerValues(input);
-    input.addEventListener(inputListener.eventType, inputListener.onChange);
+    const inputOnChange = optionOnChange(input);
+    input.addEventListener('change', inputOnChange);
     
     input.removeAttribute('disabled');
   });
 });
 
 TestNotificationButton.addEventListener('click', testNotification);
-
-RangeWrappers.forEach(initRangeWithDisplay);

@@ -3,8 +3,7 @@ const CONFIG = {
     // Emote Options
     enableTwitchEmotes: true,
     enableTwitchSubEmotes: true,
-    enableBetterTTVEmotes: true,
-    emoteChannels: 'monkasen',
+    enableCustomEmotes: true,
     
     // Chat Options
     removeChatAvatars: true,
@@ -20,7 +19,6 @@ const CONFIG = {
   },
   
   iceOptions: {
-    emoteChannels: 'monkasen, trihex, reckful, sodapoppin, b0aty, NightDev',
     enableIceOldEmotes: true,
     iceEnableLiveIcon: true,
     iceEnableLiveNotification: true,
@@ -28,7 +26,7 @@ const CONFIG = {
   },
 
   iceLiveCheck: {
-    url: 'http://107.170.95.160/live',
+    url: 'http://107.170.95.160/live/',
     interval: 30000
   }
 }
