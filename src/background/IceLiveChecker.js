@@ -1,11 +1,11 @@
 import axios from 'axios';
 import dateFormat from  'date-fns/format';
-import { Notifications } from '../utils/chrome';
+import { Notifications } from 'src/utils/chrome';
 
-import PersistentSyncStorage from '../helpers/PersistentSyncStorage';
-import Icon from '../helpers/Icon';
+import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
+import Icon from 'src/helpers/Icon';
 
-import CONFIG from '../config';
+import CONFIG from 'src/config';
 
 
 class IceLiveChecker { // TODO: Make this disablable, so it can be enabled/disabled on option change

@@ -1,9 +1,9 @@
-import PersistentSyncStorage from '../helpers/PersistentSyncStorage';
+import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
 
 import Setup from './Setup';
 import IceLiveChecker from './IceLiveChecker';
 
-import CONFIG from '../config.js';
+import CONFIG from 'src/config';
 
 class Main {
   constructor() {

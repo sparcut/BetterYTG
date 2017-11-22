@@ -1,6 +1,6 @@
-import './sass/setupPage.sass';
+import 'src/sass/setupPage.sass';
 
-import PersistentSyncStorage from './helpers/PersistentSyncStorage';
+import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
 
 
 // --- Definitions ---

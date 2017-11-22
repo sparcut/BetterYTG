@@ -2,8 +2,17 @@ const webpack = require('webpack'),
       path = require('path'),
       CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const srcPath = path.join(__dirname, 'src'),
+      distPath = path.join(__dirname, 'dist'),
+      node_modulesPath = path.join(__dirname, 'node_modules')
+
 module.exports = {
-  context: path.resolve('src'),
+  resolve: {
+    alias: {
+      src: srcPath
+    }
+  },
+  context: srcPath,
   entry: {
     content: './content/',
     background: './background/',
@@ -12,21 +21,21 @@ module.exports = {
     setupPage: './setupPage.js'
   },
   output: {
-    path: path.resolve('dist'),
+    path: distPath,
     filename: './[name].js'
   },
 
   module: {
     rules: [
-      { test: /\.sass$/, use: ['style-loader', 'css-loader', 'sass-loader'], exclude: /node_modules/ },
+      { test: /\.sass$/, use: ['style-loader', 'css-loader', 'sass-loader'], exclude: /node_modules/ }
     ]
   },
 
   plugins: [
     new CopyWebpackPlugin([
       'manifest.json',
-      'assets/**/*',
-      'html/**/*'
+      'html/**/*',
+      'assets/**/*'
     ], {
       ignore: [
         '**/*.psd'
