@@ -21,8 +21,7 @@ class ChatWatcher {
       if (this.chatContainer === null) {
         setTimeout(checkForContainer.bind(this, res), 250);
       } else {
-        // console.log('Container found');
-        // console.log(this.chatContainer);
+        // Container found
         res();
       }
     }
@@ -46,6 +45,8 @@ class ChatWatcher {
       subtree: false
     });
   }
+
+  // messgage parser https://github.com/night/BetterTTV/blob/acb56f9fa205f810b08c53cb44260dd65f8819ad/src/modules/chat/index.js#L192
 }
 
 export default ChatWatcher;
