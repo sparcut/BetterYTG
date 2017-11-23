@@ -19,7 +19,7 @@ a
 .success-overlay
   visibility: hidden
   opacity: 0
-  position: absolute
+  position: fixed
   top: 0
   left: 0
   z-index: 10
@@ -28,8 +28,8 @@ a
   flex-direction: column
   align-items: center
   justify-content: center
-  height: 100vh
-  width: 100vw
+  height: 100%
+  width: 100%
   transition: visibility 0s, opacity 200ms ease
   &.show
     visibility: visible
