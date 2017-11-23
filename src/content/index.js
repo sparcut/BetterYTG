@@ -1,6 +1,8 @@
-import '../sass/content.sass';
+import 'src/sass/content.sass';
 import ChatWatcher from './ChatWatcher';
 import RouteWatcher from './RouteWatcher';
+
+import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
 
 const isLivestreamPage = () => {
   const timeDisplay = document.querySelector('.ytp-time-display');
@@ -42,9 +44,12 @@ const main = () => {
 
 const routeWatcher = new RouteWatcher;
 
-routeWatcher.on('change', () => {
-  // console.log('newPage');
-  main();
-});
+PersistentSyncStorage.on('ready', () => {
+  pageLoad().then(() => {
+    main();
 
-pageLoad().then(main);
+    routeWatcher.on('change', () => {
+      main();
+    });
+  });
+});
