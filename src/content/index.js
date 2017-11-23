@@ -9,7 +9,7 @@ const isLivestreamPage = () => {
   const chatApp = document.querySelector('yt-live-chat-app');
   const chatHeader = document.querySelector('.yt-live-chat-renderer-0');
 
-  const timeDisplayCheck = document.querySelector('.ytp-time-display').classList.contains('ytp-live');
+  const timeDisplayCheck = timeDisplay && timeDisplay.classList.contains('ytp-live');
   const chatCheck = (document.body.contains(chatApp) || document.body.contains(chatHeader));
 
   return (timeDisplayCheck || chatCheck);
