@@ -121,7 +121,6 @@ class ChatWatcher extends EventEmitter {
     const textNode = node.querySelector('#message');
     const message = textNode.innerText;
     const parsed = this.emotes.parseString(message);
-    console.log(parsed);
     textNode.innerHTML = parsed;
   }
 
