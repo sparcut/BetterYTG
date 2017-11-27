@@ -89,14 +89,19 @@ class ChatWatcher extends EventEmitter {
 
           for(let i = 0, length = mutation.removedNodes.length-1; i <= length; i++) {
             const removedNode = mutation.removedNodes[i];
-            if(removedNode.className && 
+
+            if(typeof removedNode.className === 'string' && // check if className exists, is 'SVGAnimatedString' when window resized and removed 
                ~removedNode.className.indexOf('BYTG-Emote') !== 0) {
               isBYTGEmote = true;
             }
           }
 
           if(isBYTGEmote) {
-            this.parseNode(node);
+            if(document.body.contains(node)) {
+              this.parseNode(node);
+            } else {
+              singleObserver.disconnect();
+            }
           }
         }
       });
