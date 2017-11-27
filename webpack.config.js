@@ -1,7 +1,12 @@
+// Packages
 const webpack = require('webpack'),
       path = require('path'),
-      CopyWebpackPlugin = require('copy-webpack-plugin');
+      axios = require('axios');
 
+// Webpack Plugins
+const CopyPlugin = require('copy-webpack-plugin');
+
+// Paths
 const srcPath = path.join(__dirname, 'src'),
       distPath = path.join(__dirname, 'dist'),
       node_modulesPath = path.join(__dirname, 'node_modules')
@@ -32,7 +37,7 @@ module.exports = {
   },
 
   plugins: [
-    new CopyWebpackPlugin([
+    new CopyPlugin([
       'manifest.json',
       'html/**/*',
       'assets/**/*'
@@ -40,7 +45,7 @@ module.exports = {
       ignore: [
         '**/*.psd'
       ]
-    }),
+    })
   ],
 
   devtool: '#inline-cheap-source-map'
