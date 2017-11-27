@@ -15,7 +15,8 @@
     "notifications",
     "background",
     "http://107.170.95.160/*",
-    "https://*.ytimg.com/*"
+    "https://*.ytimg.com/*",
+    "https://twitchemotes.com/*"
   ],
 
 
@@ -41,5 +42,9 @@
       "run_at": "document_end",
       "js": [ "content.js" ]
     }
+  ],
+
+  "web_accessible_resources": [
+    "assets/emotes/*"
   ]
 }

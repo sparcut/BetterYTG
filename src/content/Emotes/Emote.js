@@ -1,12 +1,15 @@
 class Emote {
-  constructor({ id, code, url }) {
-    this.id = id;
+  constructor({ code, url }) {
     this.code = code;
     this.url = url;
   }
 
-  toHTML() {
-    
+  get html() {
+    return (`
+      <span class="BYTG-Emote">
+        <img src="${this.url}" alt="${this.code}">
+      </span>
+    `).trim();
   }
 
 }

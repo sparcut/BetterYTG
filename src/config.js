@@ -3,7 +3,7 @@ const CONFIG = {
     // Emote Options
     enableTwitchEmotes: true,
     enableTwitchSubEmotes: true,
-    enableCustomEmotes: true,
+    enableBetterYTGEmotes: true,
     
     // Chat Options
     removeChatAvatars: true,

@@ -4,7 +4,7 @@ class RouteWatcher extends EventEmitter {
   constructor() {
     super();
 
-    this.docTitle = document.querySelector('head > title');
+    this.target = document.querySelector('head > title');
     this.observer = null;
 
     // load is deffered to allow for all modules to initialize first
@@ -19,14 +19,14 @@ class RouteWatcher extends EventEmitter {
          * and between routes.
          */
         if(m.target.innerText === 'YouTube Gaming') {
-          this.emit('default-title');
+          this.emit('main');
         } else {
           this.emit('change');
         }
       });
     });
 
-    this.observer.observe(this.docTitle, {
+    this.observer.observe(this.target, {
       childList: true,
       attributes: false,
       characterData: true,
