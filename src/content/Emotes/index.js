@@ -69,7 +69,7 @@ class Emotes {
     let htmlOutput = '';
 
     // Check for and convert emotes
-    for(let i = words.length-1; i >= 0; i--) {
+    for(let i = 0, length = words.length-1; i <= length; i++) {
       // ﻿ === 'ZERO WIDTH NO-BREAK SPACE'
       const word = words[i].replace('﻿', '').trim();
 
