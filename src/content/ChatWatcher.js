@@ -1,13 +1,10 @@
-import EventEmitter from 'events';
-
 import Emotes from './Emotes';
 
-class ChatWatcher extends EventEmitter {
+class ChatWatcher {
   constructor() {
     super();
 
     this._watchChat = this._watchChat.bind(this);
-    this.emit = this.emit.bind(this);
 
     this._chatContainer = null;
     this._observer = null;
@@ -78,7 +75,6 @@ class ChatWatcher extends EventEmitter {
   _onNewMessage(node) {
     this.parseNode(node);
     this.watchSingleMessage(node);
-    // this.emit('message', messageNode, message);
   }
 
   watchSingleMessage(node) {
