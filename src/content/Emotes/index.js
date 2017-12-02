@@ -53,7 +53,6 @@ class Emotes {
       const code = emoteCodes[i];
       const emoteId = OldIceEmotes[code];
       const url = `https://static-cdn.jtvnw.net/emoticons/v1/${emoteId}/1.0`;
-      console.log(url);
       this.dictionary.set(code, new Emote({ code, url }));
     }
   }
