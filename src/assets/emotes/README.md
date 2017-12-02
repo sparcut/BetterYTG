@@ -14,6 +14,7 @@ If you would like a new emote added, please make an issue about it and gain supp
 | ![(ditto)](images/9dca6bfa9f6aff0f0d9a3de59460600d.gif) | `(ditto)` |
 | ![(poolparty)](images/b5c54e22de3ed28697ecbabfd41e647e.png) | `(poolparty)` |
 | ![(puke)](images/51b0d24556ce06ce2f86e87f47d4ca57.png) | `(puke)` |
+| ![4Heads](images/e6cfdaf57b02daf29180022951844395.png) | `4Heads` |
 
 ## A
 | Emote | Text |
@@ -29,8 +30,10 @@ If you would like a new emote added, please make an issue about it and gain supp
 | ![BasedGod](images/a7cba75e44a300abf440a86ba0f6f796.png) | `BasedGod` |
 | ![BatKappa](images/42da682b1e2d93bec7da359b45d37620.png) | `BatKappa` |
 | ![BBaper](images/53c99097cb4c8ac92979c888633397fe.gif) | `BBaper` |
+| ![BibleBag](images/9d06f2831d35430df1b7dd7bea0483fd.png) | `BibleBag` |
 | ![billyReady](images/b19447f9be461da06bb1c96470c87d0a.gif) | `billyReady` |
 | ![Blackappa](images/dab6e0367c7075ef0cb417261bea303f.png) | `Blackappa` |
+| ![BootyTime](images/186320487706a5fce4788c03fc2621cc.png) | `BootyTime` |
 | ![bttvGL](images/8423a784f1a73dafb60b5e2ac0b3e26d.gif) | `bttvGL` |
 | ![bttvGR](images/204bc57c0e7fa5c3609d2a4eff266793.gif) | `bttvGR` |
 | ![bttvPedo](images/6fa20ec6319010dbe51c44e02c8fc7e8.png) | `bttvPedo` |
@@ -52,6 +55,8 @@ If you would like a new emote added, please make an issue about it and gain supp
 | ![Clap](images/ba317cc5bacc33ec252fbdf1aada8c0d.gif) | `Clap` |
 | ![Clap2](images/694e636efc6ef4a26fd1fb473d6a1998.gif) | `Clap2` |
 | ![ConcernDoge](images/44594aee3ae4acdd47a9c1736aafd391.png) | `ConcernDoge` |
+| ![ConcernFroge](images/3a094faf7db07956cbd13e72fd7416bc.png) | `ConcernFroge` |
+| ![CoryZ](images/45452d2dd121b39fcc1e3e5a4237b7d4.png) | `CoryZ` |
 | ![CruW](images/5108cc1860e21c5d289025ca99efa777.png) | `CruW` |
 | ![CuteDog](images/f1d3300acc3e04185277170d01caa1f0.gif) | `CuteDog` |
 
@@ -84,6 +89,7 @@ If you would like a new emote added, please make an issue about it and gain supp
 | ![FeelsBagMan](images/37d0e101dbb7b226b32ecb409591f6bd.png) | `FeelsBagMan` |
 | ![FeelsBirthdayMan](images/6a8b7536bd91e4efbb5628a6f54bbc7f.png) | `FeelsBirthdayMan` |
 | ![FeelsDance](images/bd924c53b299a17edac8bf35b17c3d0d.gif) | `FeelsDance` |
+| ![FeelsGoodEnoughMan](images/64f7c9b95272a3a4002311300c6d8573.png) | `FeelsGoodEnoughMan` |
 | ![FeelsGoodMan](images/4cc57ecb5ae943854ed980bbba900336.png) | `FeelsGoodMan` | 
 | ![FeelsGreatMan](images/43998e54a8d0f1c0d7dde8d31381f899.png) | `FeelsGreatMan` |
 | ![FeelsHighMan](images/a54c80d5afe69175e0a124a7b32eb39f.png) | `FeelsHighMan` |
@@ -121,7 +127,10 @@ If you would like a new emote added, please make an issue about it and gain supp
 | ![gachiPRIDE](images/9bdf14aee9577561c2f491a49ef13945.gif) | `gachiPRIDE` |
 | ![gachiSLIDE](images/85190c2c48e91df26ed688ac5f82cad2.gif) | `gachiSLIDE` |
 | ![gamBA](images/8e927660c976180a25849d5f76b1b5d3.gif) | `gamBA` |
+| ![GeishHard](images/46d8afbbe51e410624245ff7f22e66f6.png) | `GeishHard` |
 | ![GetMoney](images/0636ffb1ac5946a2ce3cb729c829c77b.gif) | `GetMoney` |
+| ![GLOD](images/2d996cded946a158b2d7f53cce0a10b5.png) | `GLOD` |
+| ![GoodMemes](images/a14f376174a4caa3c86212c3a9980d2d.png) | `GoodMemes` |
 | ![gooseWut](images/47a9539618fb2fb7f3eab91d8c04928e.png) | `gooseWut` |
 | ![GreekCreep](images/0b82008d874dba0af1ca6ac8b8ef390c.gif) | `GreekCreep` |
 | ![GreekG](images/1de8da6a4d7aef897c28a213988da16f.png) | `GreekG` |
@@ -137,6 +146,8 @@ If you would like a new emote added, please make an issue about it and gain supp
 | ![hoSway](images/b68b6b55ed92145c7be1be8977ef9905.gif) | `hoSway` |
 | ![HotBois](images/50720fa68c5b9ba5ea68ea5b833824e8.gif) | `HotBois` |
 | ![hottedPls](images/eedc2441a4146cdb17bae9265fbfd7c4.gif) | `hottedPls` |
+| ![HYPEtime](images/d0370faf87a32b90165cd0a3d159f3c4.png) | `HYPEtime` |
+| ![HYPERBRUH](images/83bd58abe77fce84557073f25da1d915.png) | `HYPERBRUH` |
 | ![HYPERLUL](images/49b92921dd3a8c358f0a44d4ddb4f99b.png) | `HYPERLUL` |
 
 ## I
@@ -170,11 +181,13 @@ If you would like a new emote added, please make an issue about it and gain supp
 | ![KKong](images/b6abc9bc8f81cde5847fcf7553c03122.gif) | `KKong` |
 | ![KKool](images/7fe2b4136a58cade293e9e06b66d862d.gif) | `KKool` |
 | ![KKorner](images/06e53601dfd09b9382651b8f659cf2f5.gif) | `KKorner` |
+| ![KOceanMan](images/4bd3cbb6b47288b277f19c29a15cb42e.gif) | `KOceanMan` |
 
 ## L
 | Emote | Text |
 | --- | --- |
 | ![LAnoot](images/173ef3c70c0e3c362339a9cbc874f0e0.gif) | `LAnoot` |
+| ![LennyFace](images/5dbecee8f66c60f089f4419335b7a554.png) | `LennyFace` |
 | ![Loading](images/16bfbf9c462762cf1cba4134ec53c504.gif) | `Loading` |
 | ![loliTriggered](images/14c2b16d70b712429bd60a7d42db51ec.gif) | `loliTriggered` |
 | ![LuL](images/299b9a25f5bd97c358ecf21f51232bb7.png) | `LuL` |
@@ -191,11 +204,17 @@ If you would like a new emote added, please make an issue about it and gain supp
 | ![MingLUL](images/b098a5d9c624db1756107bb4d95c2591.png) | `MingLUL` |
 | ![MitchPls](images/5f40631409b8c5fb5a452908247bce9f.gif) | `MitchPls` |
 | ![MmmYea](images/425d80aac9550092b60a53dbc1e34470.png) | `MmmYea` |
+| ![MOIST](images/8c810d76ac96d2a8ddfe7b859307ad1f.png) | `MOIST` |
 | ![Monka](images/b46f92ecb8e397ef200560035de68cf7.gif) | `Monka` |
 | ![monkaGun](images/692178ba43eddefc3c24742a4a5ed239.png) | `monkaGun` |
 | ![monkaMega](images/d7950678ae26d990cabd7c411eb54302.png) | `monkaMega` |
+| ![monkaO](images/e785ab3d525ee5a63e02ce0fee6e9afa.png) | `monkaO` |
+| ![monkaOMG](images/7dd974830f95680b3e258d5bb5f040c3.png) | `monkaOMG` |
 | ![monkaS](images/fa982537a1de6929556b4892dc96bd02.png) | `monkaS` |
+| ![monkASS](images/40c21f130189913e0127a0c938304bac.png) | `monkASS` |
 | ![monkaSHAKE](images/5382c60fa57e15e08b4144629cc4c819.gif) | `monkaSHAKE` |
+| ![monkaSTAB](images/2641f7aa72d5a53f15ecade859e47626.png) | `monkaSTAB` |
+| ![monkaW](images/4cf109da3a2bd73254759cab7eeb9bb1.png) | `monkaW` |
 | ![monkaX](images/1ad9a0cf0a89d90549115e8ccc46a87b.gif) | `monkaX` |
 | ![MouthHugs](images/e3eaaa5e6d1aaff676b55adc24b2a07d.gif) | `MouthHugs` |
 | ![mrvShark](images/b5bdc7537f651e521164e5e38ee06286.gif) | `mrvShark` |
@@ -216,10 +235,15 @@ If you would like a new emote added, please make an issue about it and gain supp
 | ![OhMyGoodness](images/885988685eae9fb323bc8f1a40270731.png) | `OhMyGoodness` |
 | ![OMEGAhaHAA](images/d9e2ea38af20595fef0b7b7c64eb22c2.png) | `OMEGAhaHAA` |
 | ![OMEGALUL](images/39ac8b9606fbeb08c648dcb17eab7b75.png) | `OMEGALUL` |
+| ![OpieOBee](images/5ad2e0b09957658dc80f6c3c069b5457.png) | `OpieOBee` |
+| ![OpieOShaq](images/259aed4512116ee8fd047a4512de5fad.png) | `OpieOShaq` |
 
 ## P
 | Emote | Text |
 | --- | --- |
+| ![PagChomp](images/43a6e7bb9e021834690f783e77cd1ed5.png) | `PagChomp` |
+| ![PartyParrot](images/bb393467f589b441478263fcc8e0ef03.gif) | `PartyParrot` |
+| ![PassTheBleach](images/f4344075f24ecc3a8e2d0527265e5905.png) | `PassTheBleach` |
 | ![PedoBear](images/4d6e3d591f7604b810f9719e34601397.png) | `PedoBear` |
 | ![pepeClap](images/5727e7b65208ba57e1df8b9eda1d2a08.gif) | `pepeClap` |
 | ![PepeCopterPls](images/11b989c492acf342c736c2df90c6b0c0.gif) | `PepeCopterPls` |
@@ -228,9 +252,12 @@ If you would like a new emote added, please make an issue about it and gain supp
 | ![pepeTrump](images/e7fb07bfdeb62f5d71c7412a0fd9f443.png) | `pepeTrump` |
 | ![pepoS](images/93afd58644425235cb279306c07886d3.png) | `pepoS` |
 | ![pinkGuy](images/bc71c12d20a412a8681db162edb9aa95.gif) | `pinkGuy` |
+| ![PLEASENO](images/30e3094d016829ee30d22815afd8ebfa.png) | `PLEASENO` |
 | ![POGGERS](images/ec52632d26a4f840fa8d226f44ed833b.png) | `POGGERS` |
 | ![Poseidonpls](images/4250a8a4206579c6947218d886b2a200.gif) | `Poseidonpls` |
+| ![POWAH](images/f11e3fb8c65ae194fcfd86f33ad69bc8.png) | `POWAH` |
 | ![PresidentSleeper](images/385e2e56fe41d324d07d84a7d20e167e.png) | `PresidentSleeper` |
+| ![PressF](images/64edb2bc01df4ae1650051cf9e569ce5.png) | `PressF` |
 | ![purpleIce](images/fa455c22afa861fcac7a7abe2f1daf46.png) | `purpleIce` |
 
 ## Q
@@ -260,6 +287,7 @@ If you would like a new emote added, please make an issue about it and gain supp
 | ![renoHype](images/a0960ab803bc8ede380b0709aef70a21.gif) | `renoHype` |
 | ![rickPls](images/66c3eca5c1edc2ec27cac3d0c3a2b437.gif) | `rickPls` |
 | ![RossPls](images/2bf36845658bdc4573508fff2a67e919.gif) | `RossPls` |
+| ![RunOgre](images/743ab7526227aea211146184d41c668f.png) | `RunOgre` |
 
 ## S
 | Emote | Text |
@@ -268,14 +296,19 @@ If you would like a new emote added, please make an issue about it and gain supp
 | ![SaltyCorn](images/6646f3af9dbc1846e385bc2b7ac579a1.png) | `SaltyCorn` |
 | ![Sanic](images/782bc5d43c42a8d68a61232f5569073f.gif) | `Sanic` |
 | ![shieetPls](images/64492576ba8d103c091d4d6822d15f61.gif) | `shieetPls` |
-| ![ShoopDaWhoop](images/cf5074e157167502fb5b0d27c460ebe4.png) | `ShoopDaWhoop` |
 | ![ShotzL](images/c158ad4f266f5a05bb8a995690d0886e.gif) | `ShotzL` |
 | ![ShotzR](images/017ba7ae843c438000ec15a6cda72706.gif) | `ShotzR` |
 | ![shrekW](images/281c58a0f26bbfde59a2eb0c09d2499e.png) | `shrekW` |
+| ![SmugPepe](images/d75a5321a07c2d7f38ed6fa59c7cd650.png) | `SmugPepe` |
 | ![sodaTP](images/45c3b02d35f02cd92a1ea5c9e7e49ee2.png) | `sodaTP` |
 | ![SoSerious](images/7b19cd1b4c29178c384fb30a8f42ae45.png) | `SoSerious` |
 | ![SourPls](images/6b559baf697427c968f45c7bce3bffd2.gif) | `SourPls` |
+| ![SpongeArmL](images/b759568790e2f7834ed138d041a56a61.png) | `SpongeArmL` |
+| ![SpongeArmR](images/b2bafcab68595540758af2dced4f3b64.png) | `SpongeArmR` |
+| ![sPuke](images/89fd4d6d9178650905b48d946eb80dc9.png) | `sPuke` |
 | ![squirrelRAGE](images/6519bb331ff4b5cbd87b6ff8d1666687.gif) | `squirrelRAGE` |
+| ![stopS](images/22c44b68dbd7b00a81e1dd9097072801.png) | `stopS` |
+| ![sWonder](images/d35adc8188cc417b4e52c817dc9c7a41.png) | `sWonder` |
 
 ## T
 | Emote | Text |
@@ -285,11 +318,14 @@ If you would like a new emote added, please make an issue about it and gain supp
 | ![think3D](images/4a0058563ac043d4961f7327e18218ea.gif) | `think3D` |
 | ![THONK](images/04b600d7809b4e4326cead6e71668388.png) | `THONK` |
 | ![TinaB](images/711462caa19ce4c0e290e0b3fc8febf1.gif) | `TinaB` |
+| ![TRIGGERED](images/f1fcc60a82022cc2e88f99043e730c2e.png) | `TRIGGERED` |
 | ![TriKool](images/456e64c16093650e3805e81340ccdc5c.gif) | `TriKool` |
 | ![TrumpRage](images/35b5bb9d95c8aef49a7e9138a1711a1f.gif) | `TrumpRage` |
 | ![TrumpSmile](images/2158fbecaa07e6a69f253d3e7e2a5ead.png) | `TrumpSmile` |
+| ![TrumpSmug](images/96139f67b15bec803b310c82492e18a0.gif) | `TrumpSmug` |
 | ![TrumpSmugs](images/e1e057a28a31aed3cb426fc517175fe2.png) | `TrumpSmugs` |
 | ![TTrump](images/ff6a4b027a06c8661204ea5c7c28b822.gif) | `TTrump` |
+| ![TwitchCops](images/b8838d5c80635cdeb75253d666be3ce8.png) | `TwitchCops` |
 
 ## U
 | Emote | Text |
@@ -312,6 +348,12 @@ If you would like a new emote added, please make an issue about it and gain supp
 | ![WhoseMans](images/b86eef1d6897e5fc307c1ca22acde7d0.gif) | `WhoseMans` |
 | ![Wowee](images/dead0136f8634a28305d391f7a7f8ab1.png) | `Wowee` |
 | ![WowPls](images/b0b48cd6f4daf7564ebaef0130e379c2.gif) | `WowPls` |
+| ![WTFgurl](images/dfb7d0fbeb6a6f129236eda6669ddec8.png) | `WTFgurl` |
+
+## Y
+| Emote | Text |
+| --- | --- |
+| ![YanStabR](images/73bab7d8afad8441c63c039b9d29f65a.png) | `YanStabR` | 
 
 ## Z
 | Emote | Text |
