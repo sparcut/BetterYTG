@@ -32,7 +32,7 @@ module.exports = {
 
   module: {
     rules: [
-      { test: /\.sass$/, use: ['style-loader', 'css-loader', 'sass-loader'], exclude: /node_modules/ }
+      { test: /\.styl$/, use: ['style-loader', 'css-loader', 'stylus-loader'], exclude: /node_modules/ }
     ]
   },
 

@@ -1,4 +1,4 @@
-import 'src/sass/content.sass';
+import 'src/stylus/content.styl';
 import ChatWatcher from './ChatWatcher';
 import RouteWatcher from './RouteWatcher';
 

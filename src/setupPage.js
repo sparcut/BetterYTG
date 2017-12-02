@@ -1,4 +1,4 @@
-import 'src/sass/setupPage.sass';
+import 'src/stylus/setupPage.styl';
 
 import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
 

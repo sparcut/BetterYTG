@@ -7,10 +7,14 @@ body
   color: #fff
   margin: 25px
 
-$font-weights: ( light: 300, regular: 400, bold: 700 )
-@each $fw, $w in $font-weights
-  .fw-#{$fw}
-    font-weight: $w
+font-weights = {
+  light: 300,
+  regular: 400, 
+  bold: 700
+}
+for fw, w in font-weights
+  .fw-{fw}
+    font-weight: w
 
 a
   text-decoration: none

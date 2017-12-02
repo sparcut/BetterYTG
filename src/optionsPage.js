@@ -1,9 +1,10 @@
+import 'src/stylus/optionsPage.styl';
+
 import dateFormat from 'date-fns/format';
 import { debounce } from 'lodash';
 import { Notifications } from 'src/utils/chrome';
 
 import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
-import 'src/sass/optionsPage.sass';
 
 // Function Definitions
 
