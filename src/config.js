@@ -10,7 +10,7 @@ const CONFIG = {
     separateChatLines: false,
     
     // Ice Options (Ice_Poseidon)
-    enableIceOldEmotes: false,
+    enableOldIceEmotes: false,
     iceEnableLiveIcon: false,
     iceEnableLiveNotification: false,
     iceEnableNotificationSound: false,
@@ -18,7 +18,7 @@ const CONFIG = {
   },
   
   iceOptions: {
-    enableIceOldEmotes: true,
+    enableOldIceEmotes: true,
     iceEnableLiveIcon: true,
     iceEnableLiveNotification: true,
     iceEnableNotificationSound: true,
