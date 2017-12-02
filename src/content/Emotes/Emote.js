@@ -11,7 +11,6 @@ class Emote {
       </span>
     `).trim();
   }
-
 }
 
 export default Emote;
