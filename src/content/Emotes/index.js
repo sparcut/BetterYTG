@@ -34,9 +34,12 @@ class Emotes {
   }
 
   loadBetterYTG() {
-    for(let i = CustomEmotes.length-1; i >= 0; i--) {
-      const [ code, filename ] = CustomEmotes[i]; 
-      const url = chrome.runtime.getURL(`/assets/emotes/${filename}`);
+    const emoteCodes = Object.keys(CustomEmotes);
+
+    for(let i = emoteCodes.length-1; i >= 0; i--) {
+      const code = emoteCodes[i];
+      const filename = CustomEmotes[code]; 
+      const url = chrome.runtime.getURL(`/assets/emotes/images/${filename}`);
       this.dictionary.set(code, new Emote({ code, url }));
     }
   }
