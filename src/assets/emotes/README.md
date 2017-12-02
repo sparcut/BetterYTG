@@ -19,7 +19,6 @@ If you would like a new emote added, please make an issue about it and gain supp
 ## A
 | Emote | Text |
 | --- | --- |
-| ![aliPls](images/8a6d06df4d67940a96912f05e06683c4.gif) | `aliPls` |
 | ![AlisonPls](images/0701315b30b4084929b861494ef1ba44.gif) | `AlisonPls` |
 | ![AngelThump](images/bff9c5ff54508d7c8b38031e3db9cce0.png) | `AngelThump` |
 | ![ashThink](images/93ed995dc2cbf08bf2909beddec4d013.gif) | `ashThink` |
@@ -188,7 +187,6 @@ If you would like a new emote added, please make an issue about it and gain supp
 | --- | --- |
 | ![LAnoot](images/173ef3c70c0e3c362339a9cbc874f0e0.gif) | `LAnoot` |
 | ![LennyFace](images/5dbecee8f66c60f089f4419335b7a554.png) | `LennyFace` |
-| ![Loading](images/16bfbf9c462762cf1cba4134ec53c504.gif) | `Loading` |
 | ![loliTriggered](images/14c2b16d70b712429bd60a7d42db51ec.gif) | `loliTriggered` |
 | ![LuL](images/299b9a25f5bd97c358ecf21f51232bb7.png) | `LuL` |
 
