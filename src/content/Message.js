@@ -1,5 +1,7 @@
 import Emotes from './Emotes';
 
+const idRegexp = /\/-([A-Za-z-_\d])/;
+
 class Message {
   constructor(messageNode) {
     this.node = messageNode;
@@ -9,6 +11,7 @@ class Message {
     this.parsedText = ''; // This should be fine since you can't edit/change messages
 
     this.parseText();
+    this.setAuthorColor();
 
     if(this.hasEmotes) {
       this.node.setAttribute('bytg-id', this.id);
@@ -75,6 +78,19 @@ class Message {
 
   setHtml() {
     this.textNode.node.innerHTML = this.parsedText;
+  }
+
+  setAuthorColor() {
+    const imageSrc = this.node.querySelector('#img').src;
+
+    const regexParse = idRegexp.exec(imageSrc);
+    const colorId = regexParse.length > 1 ? regexParse[1] : null;
+
+    if(colorId !== null) {
+      this.node.classList.add(`BYTG-chat-color-${colorId}`);
+    } else {
+      // log error, couldn't get colorID from `x` url
+    }
   }
 
   parseIllegalCharcters(word) {
