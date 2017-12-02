@@ -9,8 +9,8 @@ If you would like a new emote added, please make an issue about it and gain supp
 ## Special Charcters
 | Emote | Text |
 | --- | --- |
-| ![:'(](\'\(.png) | `:'(` | <!-- Requires hard replace YTG default --> 
-| ![:D](D.png) | `:D` | <!-- Requires hard replace YTG default --> 
+| ![:'(]({{colon}}\'\).png) | `:'(` | <!-- Requires hard replace YTG default --> 
+| ![:D]({{colon}}D.png) | `:D` | <!-- Requires hard replace YTG default --> 
 | ![(chompy)]((chompy).gif) | `(chompy)` |
 | ![(ditto)]((ditto).gif) | `(ditto)` |
 | ![(poolparty)]((poolparty).png) | `(poolparty)` |
