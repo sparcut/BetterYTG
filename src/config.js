@@ -2,7 +2,6 @@ const CONFIG = {
   defaultOptions: {
     // Emote Options
     enableTwitchEmotes: true,
-    enableTwitchSubEmotes: true,
     enableBetterYTGEmotes: true,
     
     // Chat Options

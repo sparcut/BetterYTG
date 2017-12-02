@@ -15,7 +15,6 @@ class Emotes {
   init() {
     return Promise.all([
       (PersistentSyncStorage.data.options['enableTwitchEmotes'] && this.loadTwitch()),
-      (PersistentSyncStorage.data.options['enableTwitchSubEmotes'] && this.loadTwitchSub()),
       (PersistentSyncStorage.data.options['enableBetterYTGEmotes'] && this.loadBetterYTG())
     ]);
   }
@@ -23,20 +22,6 @@ class Emotes {
   loadTwitch() {
     axios
       .get('https://twitchemotes.com/api_cache/v3/global.json')
-      .then(({ data }) => {
-        const emoteKeys = Object.keys(data);
-
-        for(let i = emoteKeys.length-1; i >= 0; i--) {
-          const emote = data[emoteKeys[i]];
-          const url = `https://static-cdn.jtvnw.net/emoticons/v1/${emote.id}/1.0`;
-          this.dictionary.set(emote.code, new Emote({ code: emote.code, url }));
-        }
-      });
-  }
-
-  loadTwitchSub() {
-    axios
-      .get('https://twitchemotes.com/api_cache/v3/images.json') // Sub emotes mapped by emotes (not channel, 'subscriber.json')
       .then(({ data }) => {
         const emoteKeys = Object.keys(data);
 
