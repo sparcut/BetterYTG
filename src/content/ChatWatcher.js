@@ -15,10 +15,14 @@ class ChatWatcher {
     return new Promise((res, rej) => {
       this.getChatContainer()
         .then(Emotes.init)
-        .then(this.watchChat);
-    });
+        .then(() => {
+          this.watchChat();
+          this.parsePreloadedMessages();
+        });
+      });
   }
 
+  
   getChatContainer() {
     // Parent of actual chat (children are messages)
     const checkForContainer = (res, rej) => {
@@ -29,8 +33,19 @@ class ChatWatcher {
         setTimeout(checkForContainer.bind(this, res, rej), 250);
       }
     }
-
+    
     return new Promise(checkForContainer);
+  }
+
+  parsePreloadedMessages() {
+    const messages = this._chatContainer.children;
+
+    for(let i = messages.length-1; i >= 0; i--) {
+      const node = messages[i];
+      if(this.isMessageNode(node)) {
+        const message = new Message(node);
+      }
+    }
   }
 
   watchChat() {
