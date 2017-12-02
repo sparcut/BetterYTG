@@ -4,7 +4,6 @@ import RouteWatcher from './RouteWatcher';
 
 import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
 
-import Emotes from './Emotes';
 
 let MAIN = null;
 
@@ -40,14 +39,6 @@ class Main {
     this.chatWatcher.init();
   }
 
-  unload() {
-    if(this.chatWatcher !== null) {
-      this.chatWatcher.unload();
-      this.chatWatcher = null;
-    }
-
-  }
-
   isLivestream() {
     const timeDisplay = document.querySelector('.ytp-time-display');
     const chatApp = document.querySelector('yt-live-chat-app');
@@ -62,7 +53,7 @@ class Main {
 
 // ---
 
-if(document.getElementsByTagName('ytg-app').length > 0) { // Is YTG
+if(document.getElementsByTagName('ytg-app').length > 0) { // Is YTG - possibly change this, allow chat on normal youtube live
   MAIN = new Main;
 }
 

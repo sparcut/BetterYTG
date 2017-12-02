@@ -1,33 +1,25 @@
 import Emotes from './Emotes';
+import Message from './Message';
 
 class ChatWatcher {
   constructor() {
-    super();
-
-    this._watchChat = this._watchChat.bind(this);
+    this.watchChat = this.watchChat.bind(this);
 
     this._chatContainer = null;
     this._observer = null;
 
-    this.messages = new Set();
+    this.messages = new Map();
   }
 
   init() {
-    this.emotes = new Emotes;
     return new Promise((res, rej) => {
-      this._getChatContainer()
-        .then(this.emotes.init)
-        .then(this._watchChat);
+      this.getChatContainer()
+        .then(Emotes.init)
+        .then(this.watchChat);
     });
   }
 
-  unload() {
-    if(this._observer !== null) {
-      this._observer.disconnect();
-    }
-  }
-
-  _getChatContainer() {
+  getChatContainer() {
     // Parent of actual chat (children are messages)
     const checkForContainer = (res, rej) => {
       this._chatContainer = document.querySelector('#items.style-scope.yt-live-chat-item-list-renderer');
@@ -41,19 +33,29 @@ class ChatWatcher {
     return new Promise(checkForContainer);
   }
 
-  _watchChat() {
+  watchChat() {
     console.log('Chat observer started');
     this._observer = new MutationObserver(mutations => {
-      
+
       mutations.forEach(mutation => {
-        // console.log(mutation);
+        const { addedNodes, removedNodes } = mutation;
+        
         // Added nodes
-        if(typeof mutation.addedNodes !== 'undefined' && mutation.addedNodes.length > 0) {
-          const Nodes = mutation.addedNodes;
-          for(let i = 0, length = Nodes.length-1; i <= length; i++) {
-            const node = Nodes[i];
-            if(this._isMessageNode(node)) {
-              this._onNewMessage(node);
+        if(typeof addedNodes !== 'undefined' && addedNodes.length > 0) {
+          for(let i = 0, length = addedNodes.length-1; i <= length; i++) {
+            const node = addedNodes[i];
+            if(this.isMessageNode(node)) {
+              this.onNewMessage(node);
+            }
+          }
+        }
+
+        // Removed nodes
+        if(typeof removedNodes !== 'undefined' && removedNodes.length > 0) {
+          for(let i = 0, length = removedNodes.length-1; i <= length; i++) {
+            const node = removedNodes[i];
+            if(this.isMessageNode(node) && this.isObservedMessage(node)) {
+              this.onObservedMessageRemoved(node);
             }
           }
         }
@@ -67,59 +69,31 @@ class ChatWatcher {
       subtree: false
     });
   }
+  
+  onNewMessage(node) {
+    const message = new Message(node);
 
-  _isMessageNode(node) {
+    // Don't store message if has 0 emotes
+    if(message.hasEmotes) {
+      this.messages.set(message.id, message);
+    }
+  }
+
+  onObservedMessageRemoved(node) {
+    const BYTGid = node.getAttribute('bytg-id');
+    const message = this.messages.get(BYTGid);
+    message.destroy();
+
+    this.messages.delete(BYTGid);
+  }
+
+  isMessageNode(node) {
     return node.tagName === 'YT-LIVE-CHAT-TEXT-MESSAGE-RENDERER';
   }
 
-  _onNewMessage(node) {
-    this.parseNode(node);
-    this.watchSingleMessage(node);
+  isObservedMessage(node) {
+    return node.getAttribute('bytg-id') !== null;
   }
-
-  watchSingleMessage(node) {
-    const singleObserver = new MutationObserver(mutations => {
-      mutations.forEach(mutation => {
-        if(typeof mutation.removedNodes !== 'undefined' && mutation.removedNodes.length > 0) {
-          let isBYTGEmote = false;
-
-          for(let i = 0, length = mutation.removedNodes.length-1; i <= length; i++) {
-            const removedNode = mutation.removedNodes[i];
-
-            if(typeof removedNode.className === 'string' && // check if className exists, is 'SVGAnimatedString' when window resized and removed 
-               ~removedNode.className.indexOf('BYTG-Emote') !== 0) {
-              isBYTGEmote = true;
-            }
-          }
-
-          if(isBYTGEmote) {
-            if(document.body.contains(node)) {
-              this.parseNode(node);
-            } else {
-              singleObserver.disconnect();
-            }
-          }
-        }
-      });
-    });
-
-    // this.messages.add(singleObserver);
-
-    singleObserver.observe(node, {
-      childList: true,
-      attributes: false,
-      characterData: false,
-      subtree: true
-    });
-  }
-
-  parseNode(node) {
-    const textNode = node.querySelector('#message');
-    const message = textNode.innerText;
-    const parsed = this.emotes.parseString(message);
-    textNode.innerHTML = parsed;
-  }
-
 }
 
 export default ChatWatcher;
