@@ -1,16 +1,25 @@
 @import '_chatColors.styl'
 
-// Chat user avatar
-#author-photo.yt-live-chat-text-message-renderer
+#items #author-photo.yt-live-chat-text-message-renderer // Chat user avatar
   display: none !important
 
-// Chat user name
-#author-name.yt-live-chat-text-message-renderer
-  &:after
-    content: ' :'
-    color: #fff
+#items .yt-live-chat-item-list-renderer[author-type="owner"]
+  background: rgba(#fff, 0.1);
 
-#menu.yt-live-chat-text-message-renderer #menu-button
-  padding: 5px !important
-  width: 28px !important
-  height: 28px !important
+
+#items #content
+  #menu #menu-button.yt-live-chat-text-message-renderer // Chat user menu button (3 dot menu)
+    padding: 5px !important
+    width: 28px !important
+    height: 28px !important
+  #author-name.yt-live-chat-text-message-renderer // Chat user name
+    &:after
+      content: ' :'
+      color: #fff
+
+.BYTG-Emote
+  max-height: 28px
+  display: inline
+  img
+    height: 100%
+    vertical-align: middle
