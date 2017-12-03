@@ -7,8 +7,7 @@ class RouteWatcher extends EventEmitter {
     this.target = document.querySelector('head > title');
     this.observer = null;
 
-    // load is deffered to allow for all modules to initialize first
-    setTimeout(() => this.init());
+    this.init();
   }
 
   init() {
@@ -26,12 +25,14 @@ class RouteWatcher extends EventEmitter {
       });
     });
 
-    this.observer.observe(this.target, {
-      childList: true,
-      attributes: false,
-      characterData: true,
-      subtree: true
-    })
+    if(this.target !== null) { // Popout chat does not have title tag
+      this.observer.observe(this.target, {
+        childList: true,
+        attributes: false,
+        characterData: true,
+        subtree: true
+      });
+    }
   }
 }
 

@@ -57,6 +57,4 @@ PersistentSyncStorage.on('ready', () => {
   MAIN = new Main;
 });
 
-// if(document.getElementsByTagName('ytg-app').length > 0) { // Is YTG - possibly change this, allow chat on normal youtube live }
-
 console.log('BYTG INIT');
