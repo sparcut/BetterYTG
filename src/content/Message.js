@@ -1,4 +1,5 @@
 import Emotes from './Emotes';
+import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
 
 const idRegexp = /\/-([A-Za-z-_\d])/;
 
@@ -12,8 +13,10 @@ class Message {
 
     this.parseText();
 
-    if(this.node.getAttribute('author-type') !== 'owner') {
-      this.setAuthorColor();
+    if(PersistentSyncStorage.data.options['enableChatColors']) {
+      if(this.node.getAttribute('author-type') !== 'owner' ) {
+        this.setAuthorColor();
+      }
     }
 
     if(this.hasEmotes) {
