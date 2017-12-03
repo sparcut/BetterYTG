@@ -46,26 +46,25 @@ class Message {
 
   watch() {
     this.observer = new MutationObserver(mutations => {
-      mutations.forEach(mutation => {
+      let emoteRemoved = false;
 
+      mutations.forEach(mutation => {
         if(typeof mutation.removedNodes === 'undefined') return;
         if(mutation.removedNodes.length <= 0) return; // This must be after undefined check
-        
-        let mutationIsEmote = false;
 
         for(let i = 0, length = mutation.removedNodes.length; i < length; i++) {
           const removedNode = mutation.removedNodes[i];
-
           if(typeof removedNode.className === 'string' && // check if className exists, is 'SVGAnimatedString' when window resized and removed 
               ~removedNode.className.indexOf('BYTG-Emote') !== 0) {
-            mutationIsEmote = true;
+            emoteRemoved = true;
           }
         }
 
-        if(mutationIsEmote && document.body.contains(this.node)) {
-          this.setHtml();
-        }
       });
+
+      if(emoteRemoved && document.body.contains(this.node)) {
+        this.setHtml();
+      }
     });
 
     this.observer.observe(this.node, {
@@ -85,11 +84,11 @@ class Message {
     if(imageSrc[0] !== 'h') { // src for client user input is data instead of http/s
       imageSrc = document.querySelector('yt-live-chat-message-input-renderer #avatar #img').src;
     }
-
-
+    
+    
     const regexParse = idRegexp.exec(imageSrc);
     const colorId = regexParse.length > 1 ? regexParse[1] : null;
-
+    
     if(colorId !== null) {
       this.node.classList.add(`BYTG-chat-color-${colorId}`);
     } else {
