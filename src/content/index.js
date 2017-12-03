@@ -23,7 +23,7 @@ class Main {
     this.routeWatcher = new RouteWatcher;
     this.routeWatcher.on('change', this.onRouteChange);
 
-    this.onRouteChange()
+    this.onRouteChange();
   }
 
   onRouteChange() {
