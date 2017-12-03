@@ -11,7 +11,10 @@ class Message {
     this.parsedText = ''; // This should be fine since you can't edit/change messages
 
     this.parseText();
-    this.setAuthorColor();
+
+    if(this.node.getAttribute('author-type') !== 'owner') {
+      this.setAuthorColor();
+    }
 
     if(this.hasEmotes) {
       this.node.setAttribute('bytg-id', this.id);
