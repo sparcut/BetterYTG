@@ -4,12 +4,17 @@
 #items 
   #author-photo.yt-live-chat-text-message-renderer // Chat user avatar
     display: none !important
+
   .yt-live-chat-item-list-renderer[author-type="owner"] // Owner chat messages
     background: rgba(#fff, 0.1);
+    #content #author-name
+      text-shadow: #ffd600 0px 0px 10px
+
   #menu #menu-button.yt-live-chat-text-message-renderer // Chat user menu button (3 dot menu)
     padding: 5px !important
     width: 28px !important
     height: 28px !important
+
   #content
     #author-name.yt-live-chat-text-message-renderer // Chat user name
       &:after
