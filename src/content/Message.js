@@ -81,7 +81,11 @@ class Message {
   }
 
   setAuthorColor() {
-    const imageSrc = this.node.querySelector('#img').src;
+    let imageSrc = this.node.querySelector('#img').src;
+    if(imageSrc[0] !== 'h') { // src for client user input is data instead of http/s
+      imageSrc = document.querySelector('yt-live-chat-message-input-renderer #avatar #img').src;
+    }
+
 
     const regexParse = idRegexp.exec(imageSrc);
     const colorId = regexParse.length > 1 ? regexParse[1] : null;
