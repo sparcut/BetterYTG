@@ -6,6 +6,7 @@
     "start": "webpack --progress --watch",
     "watch": "npm start",
     "build": "webpack --progress",
+    "prod": "webpack --progress --config webpack.prod.js",
     "test": ""
   },
   "author": "sparcut",
@@ -13,7 +14,8 @@
   "dependencies": {
     "axios": "^0.17.0",
     "date-fns": "^1.29.0",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "uglifyjs-webpack-plugin": "^1.1.2"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.2.0",

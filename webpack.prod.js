@@ -3,11 +3,12 @@ const webpack = require('webpack'),
       path = require('path');
 
 // Webpack Plugins
-const CopyPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin'),
+      UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 // Paths
 const srcPath = path.join(__dirname, 'src'),
-      distPath = path.join(__dirname, 'dist'),
+      distPath = path.join(__dirname, 'build'),
       node_modulesPath = path.join(__dirname, 'node_modules')
 
 module.exports = {
@@ -44,6 +45,15 @@ module.exports = {
       ignore: [
         '**/*.psd'
       ]
+    }),
+
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        output: {
+          beautify: false,
+          comments: false
+        }
+      }
     })
   ],
 
