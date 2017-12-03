@@ -1,4 +1,5 @@
 import 'src/stylus/content.styl';
+import ChatScroller from './ChatScroller';
 import ChatWatcher from './ChatWatcher';
 import RouteWatcher from './RouteWatcher';
 
@@ -37,6 +38,9 @@ class Main {
   init() {
     this.chatWatcher = new ChatWatcher;
     this.chatWatcher.init();
+    
+    this.chatScroller = new ChatScroller;
+    this.chatScroller.init();
   }
 
   isLivestream() {
