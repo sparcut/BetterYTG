@@ -5,7 +5,6 @@ const CONFIG = {
     enableBetterYTGEmotes: true,
     
     // Chat Options
-    removeChatAvatars: true,
     enableChatColors: true,
     separateChatLines: false,
     
