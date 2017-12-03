@@ -27,11 +27,11 @@ class Main {
   }
 
   onRouteChange() {
-    setTimeout(() => {
-      if(this.isLivestream()) {
-        this.init();
-      }
-    }, 2000); 
+    if(this.isLivestream()) {
+      this.init();
+    }
+    // setTimeout(() => {
+    // }, 500); 
   }
 
   init() {
@@ -46,15 +46,17 @@ class Main {
   
     const timeDisplayCheck = timeDisplay && timeDisplay.classList.contains('ytp-live');
     const chatCheck = (document.body.contains(chatApp) || document.body.contains(chatHeader));
-  
+
     return (timeDisplayCheck || chatCheck);
   }
 }
 
 // ---
 
-if(document.getElementsByTagName('ytg-app').length > 0) { // Is YTG - possibly change this, allow chat on normal youtube live
+PersistentSyncStorage.on('ready', () => {
   MAIN = new Main;
-}
+});
+
+// if(document.getElementsByTagName('ytg-app').length > 0) { // Is YTG - possibly change this, allow chat on normal youtube live }
 
 console.log('BYTG INIT');
