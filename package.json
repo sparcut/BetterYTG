@@ -10,7 +10,7 @@
     "test": ""
   },
   "author": "sparcut",
-  "license": "MIT",
+  "license": "GPL 3.0",
   "dependencies": {
     "axios": "^0.17.0",
     "date-fns": "^1.29.0",
