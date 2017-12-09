@@ -40,7 +40,8 @@ module.exports = {
     new CopyPlugin([
       'manifest.json',
       'html/**/*',
-      'assets/**/*'
+      'assets/**/*',
+      '../LICENSE'
     ], {
       ignore: [
         '**/*.psd'
