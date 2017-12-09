@@ -58,5 +58,5 @@ typings/
 .env
 
 # build dirs
-dist/
+dev-build/
 build/
