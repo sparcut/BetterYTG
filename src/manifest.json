@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "BetterYTG",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "BetterYTG enhances YouTube Gaming Livestream's with more emotes (Twitch, BTTV Emotes), new features, and more.",
   "icons": {
     "16": "assets/icons/BetterYTG_red_16.png",
