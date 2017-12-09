@@ -13,7 +13,7 @@ const CONFIG = {
     iceEnableLiveIcon: false,
     iceEnableLiveNotification: false,
     iceEnableNotificationSound: false,
-    iceNotificationVolume: 0.6
+    iceNotificationVolume: 0.5
   },
   
   iceOptions: {
