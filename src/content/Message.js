@@ -13,10 +13,9 @@ class Message {
 
     this.parseText();
 
-    if(PersistentSyncStorage.data.options['enableChatColors']) {
-      if(this.node.getAttribute('author-type') !== 'owner' ) {
-        this.setAuthorColor();
-      }
+    if(PersistentSyncStorage.data.options['enableChatColors'] &&
+       this.node.getAttribute('author-type') !== 'owner') {
+      this.setAuthorColor();
     }
 
     if(this.hasEmotes) {
