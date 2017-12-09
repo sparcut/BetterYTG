@@ -8,6 +8,10 @@ import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
 
 // Function Definitions
 
+const hideDebounce = debounce(ele => {
+  ele.classList.remove('show');
+}, 1000);
+
 const setSavingStatus = (status) => {
   const SaveStatusEle = document.getElementById('save-status');
 
