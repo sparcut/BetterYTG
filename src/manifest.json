@@ -14,7 +14,7 @@
     "storage",
     "notifications",
     "background",
-    "http://107.170.95.160/*",
+    "https://www.iceposeidon.com/api/*",
     "https://*.ytimg.com/*",
     "https://twitchemotes.com/*"
   ],

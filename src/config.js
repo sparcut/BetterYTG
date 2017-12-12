@@ -24,7 +24,7 @@ const CONFIG = {
   },
 
   iceLiveCheck: {
-    url: 'http://107.170.95.160/live/',
+    url: 'https://www.iceposeidon.com/api/v1/live',
     interval: 30000
   }
 }
