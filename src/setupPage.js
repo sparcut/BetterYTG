@@ -1,6 +1,6 @@
-import 'src/stylus/setupPage.styl';
+import './stylus/setupPage.styl';
 
-import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
+import PersistentSyncStorage from './helpers/PersistentSyncStorage';
 
 
 // --- Definitions ---

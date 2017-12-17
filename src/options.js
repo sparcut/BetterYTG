@@ -1,10 +1,10 @@
-import 'src/stylus/options.styl';
+import './stylus/options.styl';
 
 import dateFormat from 'date-fns/format';
 import { debounce } from 'lodash';
-import { Notifications } from 'src/utils/chrome';
+import { Notifications } from './utils/chrome';
 
-import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
+import PersistentSyncStorage from './helpers/PersistentSyncStorage';
 
 // Function Definitions
 
@@ -54,7 +54,7 @@ const testNotification = () => {
 const optionOnChange = (input) => {
   const isCheckbox = input.type === 'checkbox';
   const inputValueKey = isCheckbox ? 'checked' : 'value';
-  
+
   if(PersistentSyncStorage.data.options.hasOwnProperty(input.id)) {
     input[inputValueKey] = PersistentSyncStorage.data.options[input.id];
   }
@@ -75,7 +75,7 @@ const optionOnChange = (input) => {
 
     return saveOption;
   })();
-  
+
   return onChange
 }
 
@@ -88,7 +88,7 @@ PersistentSyncStorage.on('ready', () => {
   OptionInputs.forEach((input) => {
     const inputOnChange = optionOnChange(input);
     input.addEventListener('change', inputOnChange);
-    
+
     input.removeAttribute('disabled');
   });
 });
