@@ -15,6 +15,7 @@
     "storage",
     "notifications",
     "background",
+    "tabs",
     "https://www.iceposeidon.com/api/*",
     "https://*.ytimg.com/*",
     "https://twitchemotes.com/*"
