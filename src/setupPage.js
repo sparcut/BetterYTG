@@ -39,7 +39,7 @@ const setupComplete = () => {
 
 const main = () => {
 
-  // Shitty way of getting inputs and values, will be a pain to maintain...
+  // TODO: Shitty way of getting inputs and values, will be a pain to maintain... needs refactoring
   const inputs = {
     isPurpleArmy_true: document.getElementById('isPurpleArmy_true')
   }
