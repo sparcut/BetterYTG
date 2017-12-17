@@ -27,8 +27,7 @@
     "chrome_style": true
   },
   "browser_action": {
-    "default_title": "BetterYTG",
-    "default_popup": "html/popup.html"
+    "default_title": "BetterYTG"
   },
   "background": {
     "scripts": [

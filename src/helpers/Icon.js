@@ -1,3 +1,5 @@
+import OpenActiveTab from './OpenActiveTab';
+
 class Icon {
   constructor() {
     this._colors = [ 'red', 'grey', 'purple' ];
@@ -5,8 +7,14 @@ class Icon {
     this._path = './assets/icons/';
 
     this.paths = {}
+    this.onClickUrls = {
+      'red': '*://gaming.youtube.com/',
+      'grey': chrome.extension.getURL('html/setup.html'),
+      'purple': '*://gaming.youtube.com/ice_poseidon/live/'
+    }
 
     this._createPaths();
+    this._bindOnClick();
   }
 
   _filename(color, size) {
@@ -22,7 +30,15 @@ class Icon {
     });
   }
 
+  _bindOnClick() {
+    chrome.browserAction.onClicked.addListener(() => {
+      const url = this.onClickUrls[this.currentColor];
+      OpenActiveTab(url);
+    });
+  }
+
   set(color) {
+    this.currentColor = color;
     chrome.browserAction.setIcon({ path: this.paths[color] });
   }
 

@@ -4,6 +4,7 @@ import { Notifications } from 'src/utils/chrome';
 
 import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
 import Icon from 'src/helpers/Icon';
+import OpenActiveTab from 'src/helpers/OpenActiveTab';
 
 import CONFIG from 'src/config';
 
@@ -92,7 +93,7 @@ class IceLiveChecker { // TODO: Make this disablable, so it can be enabled/disab
   }
 
   _onClickNotification() {
-    chrome.tabs.create({ url: 'https://gaming.youtube.com/ice_poseidon/live' });
+    OpenActiveTab('https://gaming.youtube.com/ice_poseidon/live');
     this._retractNotification();
   }
 
