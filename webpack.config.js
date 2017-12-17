@@ -21,7 +21,7 @@ module.exports = {
     content: './content/',
     background: './background/',
     popup: './popup.js',
-    options: './options.js',
+    options: './options/',
     setupPage: './setupPage.js'
   },
   output: {
