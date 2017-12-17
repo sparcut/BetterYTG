@@ -1,4 +1,4 @@
-import 'src/stylus/optionsPage.styl';
+import 'src/stylus/options.styl';
 
 import dateFormat from 'date-fns/format';
 import { debounce } from 'lodash';

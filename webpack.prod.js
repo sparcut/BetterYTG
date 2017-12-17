@@ -22,7 +22,7 @@ module.exports = {
     content: './content/',
     background: './background/',
     popup: './popup.js',
-    optionsPage: './optionsPage.js',
+    options: './options.js',
     setupPage: './setupPage.js'
   },
   output: {
