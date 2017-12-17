@@ -20,8 +20,8 @@ module.exports = {
   entry: {
     content: './content/',
     background: './background/',
-    popup: './popup.js',
-    options: './options/',
+    // popup: './popup/',
+    options: './options.js',
     setupPage: './setupPage.js'
   },
   output: {
