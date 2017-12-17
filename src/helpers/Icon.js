@@ -8,9 +8,9 @@ class Icon {
 
     this.paths = {}
     this.onClickUrls = {
-      'red': '*://gaming.youtube.com/',
+      'red': 'https://gaming.youtube.com/',
       'grey': chrome.extension.getURL('html/setup.html'),
-      'purple': '*://gaming.youtube.com/ice_poseidon/live/'
+      'purple': 'https://gaming.youtube.com/ice_poseidon/live/'
     }
 
     this._createPaths();
