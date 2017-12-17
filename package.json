@@ -15,6 +15,7 @@
     "axios": "^0.17.0",
     "date-fns": "^1.29.0",
     "lodash": "^4.17.4",
+    "preact": "^8.2.7",
     "uglifyjs-webpack-plugin": "^1.1.2"
   },
   "devDependencies": {
