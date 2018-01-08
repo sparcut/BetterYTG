@@ -12,6 +12,7 @@ const CONFIG = {
     enableOldIceEmotes: false,
     iceEnableLiveIcon: false,
     iceEnableLiveNotification: false,
+    iceEnablePersistentNotification: false,
     iceEnableNotificationSound: false,
     iceNotificationVolume: 0.5
   },

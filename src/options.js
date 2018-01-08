@@ -31,16 +31,19 @@ const setSavingStatus = (status) => {
 }
 
 const testNotification = () => {
+
+  
   if(PersistentSyncStorage.data.options['iceEnableLiveNotification']) {
-    Notifications.create('test', {
+    Notifications.clear('BetterYTG_test');
+    Notifications.create('BetterYTG_test', {
       type: 'basic',
-      iconUrl: '../assets/icons/BetterYTG_purple_128.png',
+      iconUrl: '../assets/icons/BetterYTG_purple_48.png',
       title: `Test notification! (${dateFormat(Date.now(), 'h:mm a')})`,
       message: 'This notification was generated as a test.',
       contextMessage: 'BetterYTG',
-      priority: 2,
       eventTime: Date.now(),
-      isClickable: true
+      isClickable: true,
+      requireInteraction: PersistentSyncStorage.data.options['iceEnablePersistentNotification']
     }).then(() => {
       if(PersistentSyncStorage.data.options['iceEnableNotificationSound']) {
         const notificationSound = new Audio('../assets/old_online_sound.mp3');

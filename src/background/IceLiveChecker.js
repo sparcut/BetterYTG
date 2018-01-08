@@ -76,10 +76,9 @@ class IceLiveChecker { // TODO: Make this disablable, so it can be enabled/disab
         title: `Ice Poseidon is live! (${dateFormat(Date.now(), 'h:mm a')})`,
         message: this.liveRequest.title,
         contextMessage: 'BetterYTG',
-        priority: 2,
         eventTime: Date.now(),
         isClickable: true,
-        requireInteraction: true
+        requireInteraction: PersistentSyncStorage.data.options['iceEnablePersistentNotification']
       }).then(this._playLiveSound);
     }
   }
