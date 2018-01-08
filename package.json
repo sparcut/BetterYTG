@@ -1,6 +1,6 @@
 {
   "name": "betterytg",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "BetterYTG enhances YouTube Gaming Livestream's with more emotes (Twitch, BTTV Emotes), new features, and more.",
   "scripts": {
     "start": "webpack --progress --watch",
