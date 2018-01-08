@@ -17,6 +17,11 @@ class Main {
   }
   
   init() {
+    // Ensure new options (on extension update) are added to options object
+    PersistentSyncStorage.set({
+      options: Object.assign({}, CONFIG.defaultOptions, PersistentSyncStorage.data.options)
+    });
+
     this.iceLiveChecker = new IceLiveChecker;
 
     if(PersistentSyncStorage.data.options['iceEnableLiveIcon'] || PersistentSyncStorage.data.options['iceEnableLiveNotification']) {
