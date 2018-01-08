@@ -3,6 +3,8 @@ import Popup from './Popup';
 
 import 'stylus/popup.styl';
 
+// TODO: Make popup
+
 render(
   <Popup />,
   document.getElementById('container')
