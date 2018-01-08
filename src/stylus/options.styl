@@ -23,9 +23,9 @@ table
   tr td
     padding: 0
     &:nth-child(1)
-      width: 60%
+      width: 80%
     &:nth-child(2)
-      width: 40%
+      width: 20%
       text-align: right
 
 .hr
@@ -40,3 +40,14 @@ table
   &.show
     opacity: 1
     transition: none
+
+.options-table
+  .option-row
+    display:flex
+    flex-direction: row
+    align-items: space-between
+    justify-content: space-between
+  .option-cell
+    padding-right: 5px
+    &:last-child
+      padding-right: 0px
