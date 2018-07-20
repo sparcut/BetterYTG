@@ -3,6 +3,10 @@ import ChatScroller from './ChatScroller';
 import ChatWatcher from './ChatWatcher';
 import RouteWatcher from './RouteWatcher';
 
+import {
+  isLivestream, isYoutubeGaming,
+  isYoutubeEmbed, isYoutubeVanilla
+} from 'src/helpers/Identification';
 import PersistentSyncStorage from 'src/helpers/PersistentSyncStorage';
 
 
@@ -28,7 +32,20 @@ class Main {
   }
 
   onRouteChange() {
-    if(this.isLivestream()) {
+    const {
+      enableYoutubeGaming,
+      enableYoutubeVanilla,
+      enableYoutubeEmbed
+    } = PersistentSyncStorage.data.options;
+
+    if(
+      isLivestream() &&
+      (
+        (isYoutubeGaming() && enableYoutubeGaming) ||
+        (isYoutubeVanilla() && enableYoutubeVanilla) ||
+        (isYoutubeEmbed() && enableYoutubeEmbed)
+      )
+    ) {
       this.init();
     }
     // setTimeout(() => {
@@ -41,17 +58,6 @@ class Main {
     
     this.chatScroller = new ChatScroller;
     this.chatScroller.init();
-  }
-
-  isLivestream() {
-    const timeDisplay = document.querySelector('.ytp-time-display');
-    const chatApp = document.querySelector('yt-live-chat-app');
-    const chatHeader = document.querySelector('.yt-live-chat-renderer-0');
-  
-    const timeDisplayCheck = timeDisplay && timeDisplay.classList.contains('ytp-live');
-    const chatCheck = (document.body.contains(chatApp) || document.body.contains(chatHeader));
-
-    return (timeDisplayCheck || chatCheck);
   }
 }
 

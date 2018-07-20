@@ -7,6 +7,11 @@ const CONFIG = {
     // Chat Options
     enableChatColors: true,
     separateChatLines: false,
+
+    // Site Options
+    enableYoutubeGaming: true,
+    enableYoutubeVanilla: true,
+    enableYoutubeEmbed: true,
     
     // Ice Options (Ice_Poseidon)
     enableOldIceEmotes: false,
