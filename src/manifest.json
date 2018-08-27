@@ -41,7 +41,8 @@
         "*://*.youtube.com/*"
       ],
       "run_at": "document_end",
-      "js": [ "content.js" ]
+      "js": [ "content.js" ],
+      "all_frames": true
     }
   ],
 
