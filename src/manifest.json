@@ -3,7 +3,7 @@
 
   "name": "Better YouTube Gaming",
   "short_name": "BetterYTG",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "BetterYTG enhances YouTube Gaming Livestream's with more emotes (Twitch, BTTV Emotes), new features, and more.",
   "icons": {
     "16": "assets/icons/BetterYTG_red_16.png",
@@ -41,7 +41,8 @@
         "*://*.youtube.com/*"
       ],
       "run_at": "document_end",
-      "js": [ "content.js" ]
+      "js": [ "content.js" ],
+      "all_frames": true
     }
   ],
 
