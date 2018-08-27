@@ -11,6 +11,8 @@ const srcPath = path.join(__dirname, 'src'),
       node_modulesPath = path.join(__dirname, 'node_modules')
 
 module.exports = {
+  mode: 'development',
+
   resolve: {
     alias: {
       src: srcPath
