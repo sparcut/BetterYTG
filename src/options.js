@@ -2,7 +2,6 @@ import './stylus/options.styl';
 
 import dateFormat from 'date-fns/format';
 import { debounce } from 'lodash';
-import { Notifications } from './utils/chrome';
 
 import PersistentSyncStorage from './helpers/PersistentSyncStorage';
 
@@ -28,30 +27,6 @@ const setSavingStatus = (status) => {
   }
 
   SaveStatusEle.classList.add('show');
-}
-
-const testNotification = () => {
-
-  
-  if(PersistentSyncStorage.data.options['iceEnableLiveNotification']) {
-    Notifications.clear('BetterYTG_test');
-    Notifications.create('BetterYTG_test', {
-      type: 'basic',
-      iconUrl: '../assets/icons/BetterYTG_purple_48.png',
-      title: `Test notification! (${dateFormat(Date.now(), 'h:mm a')})`,
-      message: 'This notification was generated as a test.',
-      contextMessage: 'BetterYTG',
-      eventTime: Date.now(),
-      isClickable: true,
-      requireInteraction: PersistentSyncStorage.data.options['iceEnablePersistentNotification']
-    }).then(() => {
-      if(PersistentSyncStorage.data.options['iceEnableNotificationSound']) {
-        const notificationSound = new Audio('../assets/old_online_sound.mp3');
-        notificationSound.volume = (PersistentSyncStorage.data.options['iceNotificationVolume'] || 0.5);
-        notificationSound.play();
-      }
-    });
-  }
 }
 
 const optionOnChange = (input) => {
@@ -85,7 +60,6 @@ const optionOnChange = (input) => {
 
 // Executed code
 const OptionInputs = document.querySelectorAll('.option-input');
-const TestNotificationButton = document.getElementById('test-notification');
 
 PersistentSyncStorage.on('ready', () => {
   OptionInputs.forEach((input) => {
@@ -95,5 +69,3 @@ PersistentSyncStorage.on('ready', () => {
     input.removeAttribute('disabled');
   });
 });
-
-TestNotificationButton.addEventListener('click', testNotification);
