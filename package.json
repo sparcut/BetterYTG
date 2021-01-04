@@ -12,7 +12,7 @@
   "author": "sparcut",
   "license": "GPL 3.0",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "date-fns": "^1.29.0",
     "lodash": "^4.17.15",
     "preact": "^8.2.7",
