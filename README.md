@@ -1,4 +1,4 @@
-No longer supported
+# No longer supported
 
 <div align="center">
   <img src="src/assets/icons/BetterYTG_red_128.png" />
